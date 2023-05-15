@@ -196,7 +196,6 @@ grow_vertical = 2
 z_index = -2
 texture = ExtResource("1_u2vdq")
 centered = false
-offset = Vector2(7.808, 0)
 
 [node name="Body" type="TextureRect" parent="."]
 layout_mode = 1
