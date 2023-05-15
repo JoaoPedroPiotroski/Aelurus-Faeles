@@ -1,0 +1,347 @@
+[gd_scene load_steps=27 format=3 uid="uid://bkmtr2vyuumne"]
+
+[ext_resource type="Texture2D" uid="uid://d3i27puxxicqk" path="res://assets/images/pspspsbody.png" id="1_4lb1h"]
+[ext_resource type="Texture2D" uid="uid://dvot18cge2i4x" path="res://assets/images/ceuzinhobonitocomcenario.png" id="1_u2vdq"]
+[ext_resource type="Texture2D" uid="uid://qfuxrif88gss" path="res://assets/images/pspspsarrows.png" id="2_3ky2g"]
+[ext_resource type="Script" path="res://scripts/pspsps_screen.gd" id="2_tewuu"]
+[ext_resource type="Texture2D" uid="uid://bvb0gf5qwhq8g" path="res://assets/images/pspspsactionbuttons.png" id="3_6ilru"]
+[ext_resource type="Texture2D" uid="uid://bd8ux3arnsowj" path="res://assets/images/screenlight.png" id="3_f1303"]
+[ext_resource type="Script" path="res://scripts/p_arrow_keys.gd" id="3_um2l2"]
+[ext_resource type="Texture2D" uid="uid://c1w0lcvmkgrf6" path="res://assets/images/pspspsjoystick.png" id="4_30ush"]
+[ext_resource type="Script" path="res://scripts/p_action_keys.gd" id="5_bsdny"]
+[ext_resource type="Script" path="res://scripts/p_joystick.gd" id="7_dgrfm"]
+[ext_resource type="Texture2D" uid="uid://cp02s0t2krxwn" path="res://assets/images/pstartbutton.png" id="9_0fi08"]
+[ext_resource type="Script" path="res://scripts/p_start_button.gd" id="9_bn6on"]
+[ext_resource type="Texture2D" uid="uid://bmn61185mrufy" path="res://assets/images/pselectbutton.png" id="10_jsqry"]
+[ext_resource type="Script" path="res://scripts/p_select_button.gd" id="11_rndm3"]
+
+[sub_resource type="Animation" id="Animation_1q2a4"]
+resource_name = "down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_nxxvm"]
+resource_name = "left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_8xiv2"]
+resource_name = "none"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xh55i"]
+resource_name = "right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_0fj31"]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_andfc"]
+_data = {
+"down": SubResource("Animation_1q2a4"),
+"left": SubResource("Animation_nxxvm"),
+"none": SubResource("Animation_8xiv2"),
+"right": SubResource("Animation_xh55i"),
+"up": SubResource("Animation_0fj31")
+}
+
+[sub_resource type="Animation" id="Animation_w60jp"]
+resource_name = "down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45, 102)]
+}
+
+[sub_resource type="Animation" id="Animation_yhakc"]
+resource_name = "left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(44, 101)]
+}
+
+[sub_resource type="Animation" id="Animation_och8k"]
+resource_name = "none"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45, 101)]
+}
+
+[sub_resource type="Animation" id="Animation_7034w"]
+resource_name = "right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(46, 101)]
+}
+
+[sub_resource type="Animation" id="Animation_f1vo8"]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45, 100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x87l6"]
+_data = {
+"down": SubResource("Animation_w60jp"),
+"left": SubResource("Animation_yhakc"),
+"none": SubResource("Animation_och8k"),
+"right": SubResource("Animation_7034w"),
+"up": SubResource("Animation_f1vo8")
+}
+
+[node name="pspsps" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("1_u2vdq")
+centered = false
+offset = Vector2(7.808, 0)
+
+[node name="Body" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4lb1h")
+
+[node name="ColorRect" type="ColorRect" parent="Body"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -48.0
+offset_right = 89.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[node name="Screen" type="Control" parent="Body"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -47.0
+offset_right = 88.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_tewuu")
+
+[node name="PointLight2D" type="PointLight2D" parent="Body/Screen"]
+position = Vector2(88, 47)
+texture = ExtResource("3_f1303")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Body/Screen"]
+modulate = Color(0.682353, 0.682353, 0.682353, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Body/Screen/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(176, 94)
+render_target_update_mode = 4
+
+[node name="ArrowKeys" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 43.0
+offset_top = 61.0
+offset_right = 68.0
+offset_bottom = 86.0
+script = ExtResource("3_um2l2")
+
+[node name="Sprite2D" type="Sprite2D" parent="ArrowKeys"]
+texture = ExtResource("2_3ky2g")
+centered = false
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ArrowKeys"]
+autoplay = "none"
+libraries = {
+"": SubResource("AnimationLibrary_andfc")
+}
+
+[node name="ActionKeys" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 252.0
+offset_top = 61.0
+offset_right = 277.0
+offset_bottom = 86.0
+script = ExtResource("5_bsdny")
+
+[node name="Sprite2D" type="Sprite2D" parent="ActionKeys"]
+texture = ExtResource("3_6ilru")
+centered = false
+hframes = 5
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ActionKeys"]
+autoplay = "none"
+libraries = {
+"": SubResource("AnimationLibrary_andfc")
+}
+
+[node name="Joystick" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 102.0
+offset_right = 67.0
+offset_bottom = 124.0
+texture = ExtResource("4_30ush")
+stretch_mode = 2
+script = ExtResource("7_dgrfm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Joystick"]
+autoplay = "none"
+libraries = {
+"": SubResource("AnimationLibrary_x87l6")
+}
+
+[node name="StartButton" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 260.0
+offset_top = 116.0
+offset_right = 270.0
+offset_bottom = 124.0
+script = ExtResource("9_bn6on")
+
+[node name="Sprite2D" type="Sprite2D" parent="StartButton"]
+texture = ExtResource("9_0fi08")
+centered = false
+hframes = 2
+
+[node name="SelectButton" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 260.0
+offset_top = 125.0
+offset_right = 270.0
+offset_bottom = 133.0
+script = ExtResource("11_rndm3")
+
+[node name="Sprite2D" type="Sprite2D" parent="SelectButton"]
+texture = ExtResource("10_jsqry")
+centered = false
+hframes = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.815686, 0.815686, 0.815686, 1)
+
+[connection signal="main_screen_request" from="StartButton" to="Body/Screen" method="_on_app_main_screen_requested"]

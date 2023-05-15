@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0fmscbrsf4iw"]
+
+[ext_resource type="Script" path="res://scripts/p_racingcar.gd" id="1_qbcdx"]
+[ext_resource type="Texture2D" uid="uid://bg7qwujeuxjjc" path="res://assets/images/racing_game/rcar.png" id="2_ydbiq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sx8y"]
+radius = 2.0
+height = 10.0
+
+[node name="Car" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_qbcdx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_6sx8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57079
+texture = ExtResource("2_ydbiq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = 1.5708
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 2.0

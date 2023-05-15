@@ -1,0 +1,125 @@
+[gd_scene load_steps=13 format=3 uid="uid://bp5ltjcx87x7l"]
+
+[ext_resource type="Script" path="res://scripts/p_main_screen.gd" id="1_7l8ce"]
+[ext_resource type="Texture2D" uid="uid://dxj1ab2o63uc5" path="res://assets/images/pspspsbg.png" id="2_fxk0c"]
+[ext_resource type="Script" path="res://scripts/p_clock.gd" id="3_ai5yw"]
+[ext_resource type="FontVariation" uid="uid://gxxku6cra6wb" path="res://assets/fonts/pixel_oversize.tres" id="3_nu8s1"]
+[ext_resource type="Texture2D" uid="uid://dft4d5fdkx3s" path="res://assets/images/p_battery.png" id="4_kawkd"]
+[ext_resource type="Script" path="res://scripts/p_app_grid.gd" id="6_io5ty"]
+[ext_resource type="Texture2D" uid="uid://6ud7bv5xqs6a" path="res://assets/images/pconfigicon.png" id="7_d2owi"]
+[ext_resource type="Script" path="res://scripts/p_main_screen_button.gd" id="8_l2qlh"]
+[ext_resource type="Texture2D" uid="uid://coqnmotysnxuv" path="res://assets/images/ppowerofficon.png" id="8_vxs7b"]
+[ext_resource type="Texture2D" uid="uid://dbetoxclt548o" path="res://assets/images/pgridselect.png" id="9_j6mpj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nmcn"]
+bg_color = Color(1, 0.85098, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok5ma"]
+bg_color = Color(0.117647, 0.0156863, 0.121569, 0.341176)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+shadow_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[node name="PApp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7l8ce")
+title = "main screen"
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fxk0c")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4nmcn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+
+[node name="Clock" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.619608, 0.811765, 1)
+theme_override_fonts/font = ExtResource("3_nu8s1")
+theme_override_font_sizes/font_size = 8
+text = "55:55"
+script = ExtResource("3_ai5yw")
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_kawkd")
+stretch_mode = 2
+
+[node name="backpanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ok5ma")
+
+[node name="AppGrid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = -16.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 9
+script = ExtResource("6_io5ty")
+
+[node name="TextureRect2" type="TextureButton" parent="AppGrid"]
+layout_mode = 2
+texture_normal = ExtResource("7_d2owi")
+script = ExtResource("8_l2qlh")
+is_system_app = true
+
+[node name="TextureRect3" type="TextureButton" parent="AppGrid"]
+layout_mode = 2
+texture_normal = ExtResource("8_vxs7b")
+script = ExtResource("8_l2qlh")
+is_system_app = true
+
+[node name="selected" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(24, 32)
+texture = ExtResource("9_j6mpj")
+
+[connection signal="selection_change" from="AppGrid/TextureRect2" to="." method="move_selection"]
+[connection signal="selection_change" from="AppGrid/TextureRect3" to="." method="move_selection"]

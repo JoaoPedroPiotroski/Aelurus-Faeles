@@ -1,0 +1,254 @@
+[gd_scene load_steps=11 format=3 uid="uid://fx37ef2vnxpp"]
+
+[ext_resource type="Script" path="res://scripts/p_app.gd" id="1_mq8pa"]
+[ext_resource type="Texture2D" uid="uid://cc5ii7ip31uph" path="res://assets/images/pspspslogo.png" id="2_r4en1"]
+[ext_resource type="Texture2D" uid="uid://txieamc6n8ld" path="res://assets/images/pspspstext.png" id="3_27y24"]
+[ext_resource type="Texture2D" uid="uid://bmtie3862b5v1" path="res://assets/images/rainbow.png" id="4_0g5sp"]
+
+[sub_resource type="Animation" id="Animation_or2st"]
+resource_name = "boot"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("right:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(0, 94), Vector2(88, 94)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("left:size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(0, 94), Vector2(88, 94)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasGroup/Logo:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasGroup/Logo:self_modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasGroup/RainbowOver/AnimationPlayer:speed_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 2.14355),
+"update": 0,
+"values": [2.0, 0.5]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasGroup/RainbowOver:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasGroup/Text:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasGroup/RainbowOver:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 2.14355),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasGroup/Logo:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"app_main_screen_request"],
+"method": &"emit_signal"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t8ugw"]
+_data = {
+"boot": SubResource("Animation_or2st")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_33b7p"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_s08o4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_fhrsk"]
+resource_name = "rainbowloop"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_siup7"]
+_data = {
+"RESET": SubResource("Animation_s08o4"),
+"rainbowloop": SubResource("Animation_fhrsk")
+}
+
+[node name="boot_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mq8pa")
+title = "boot screen"
+
+[node name="right" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -47.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 47.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "boot"
+libraries = {
+"": SubResource("AnimationLibrary_t8ugw")
+}
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Logo" type="Sprite2D" parent="CanvasGroup"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(88, 40)
+texture = ExtResource("2_r4en1")
+hframes = 2
+
+[node name="Text" type="Sprite2D" parent="CanvasGroup"]
+visible = false
+position = Vector2(88, 80)
+texture = ExtResource("3_27y24")
+
+[node name="RainbowOver" type="Sprite2D" parent="CanvasGroup"]
+visible = false
+top_level = true
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_33b7p")
+position = Vector2(-1, 2.38419e-07)
+rotation = -0.785398
+scale = Vector2(0.985, 1)
+texture = ExtResource("4_0g5sp")
+offset = Vector2(0, 64)
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 512)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasGroup/RainbowOver"]
+autoplay = "rainbowloop"
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_siup7")
+}

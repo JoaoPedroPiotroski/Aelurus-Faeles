@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://gxxku6cra6wb"]
+
+[ext_resource type="FontFile" uid="uid://d2emj3bxpmwm3" path="res://assets/fonts/Pokemon Classic.ttf" id="1_gc1vt"]
+
+[resource]
+base_font = ExtResource("1_gc1vt")
+spacing_top = -4
+spacing_bottom = -4
