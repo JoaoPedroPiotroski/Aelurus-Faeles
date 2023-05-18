@@ -1,0 +1,569 @@
+[gd_scene load_steps=15 format=3 uid="uid://lwywgu52v60w"]
+
+[ext_resource type="Texture2D" uid="uid://dvot18cge2i4x" path="res://assets/images/ceuzinhobonitocomcenario.png" id="1_8dwwu"]
+[ext_resource type="Script" path="res://scripts/battle.gd" id="1_m3wp8"]
+[ext_resource type="Texture2D" uid="uid://bg7qwujeuxjjc" path="res://assets/images/racing_game/rcar.png" id="2_5yp6i"]
+[ext_resource type="Script" path="res://scripts/battle_menu.gd" id="3_65ldj"]
+[ext_resource type="Script" path="res://scripts/battle_button.gd" id="4_2han0"]
+[ext_resource type="Theme" uid="uid://bnawde50ckmrl" path="res://assets/themes/battle_theme.tres" id="4_baifg"]
+[ext_resource type="Theme" uid="uid://dqa2gn4bdbdww" path="res://assets/themes/list_theme.tres" id="6_xg06a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skeny"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65kus"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_nrho6"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1mirg"]
+gradient = SubResource("Gradient_nrho6")
+width = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pobtd"]
+bg_color = Color(0.282353, 0, 1, 1)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_umkwb"]
+Panel/styles/panel = SubResource("StyleBoxFlat_pobtd")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ocyla"]
+
+[node name="battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m3wp8")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8dwwu")
+
+[node name="Allies" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -58.0
+offset_right = 144.0
+offset_bottom = 22.0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Allies"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ally" type="Control" parent="Allies/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Allies/HBoxContainer/Ally"]
+position = Vector2(24, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5yp6i")
+centered = false
+
+[node name="TextureProgressBar" type="ProgressBar" parent="Allies/HBoxContainer/Ally"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -20.0
+offset_right = -15.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
+theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
+value = 25.0
+show_percentage = false
+
+[node name="Ally2" type="Control" parent="Allies/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Allies/HBoxContainer/Ally2"]
+position = Vector2(22, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5yp6i")
+centered = false
+
+[node name="TextureProgressBar" type="ProgressBar" parent="Allies/HBoxContainer/Ally2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -24.0
+offset_right = -16.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
+theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
+value = 25.0
+show_percentage = false
+
+[node name="Enemies" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -58.0
+offset_right = -16.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Enemies"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="enemy" type="Control" parent="Enemies/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/HBoxContainer/enemy"]
+position = Vector2(24, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5yp6i")
+centered = false
+
+[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/HBoxContainer/enemy"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -24.0
+offset_right = -14.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
+theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
+value = 25.0
+show_percentage = false
+
+[node name="enemy2" type="Control" parent="Enemies/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/HBoxContainer/enemy2"]
+position = Vector2(24, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5yp6i")
+centered = false
+
+[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/HBoxContainer/enemy2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -20.0
+offset_right = -15.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
+theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
+value = 25.0
+show_percentage = false
+
+[node name="Actions" type="NinePatchRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+top_level = true
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -34.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture1D_1mirg")
+script = ExtResource("3_65ldj")
+def_position_path = NodePath("Button1")
+
+[node name="DefPos" type="Marker2D" parent="Actions"]
+position = Vector2(35, 8)
+
+[node name="Panel" type="Panel" parent="Actions"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 6.0
+offset_right = 216.0
+offset_bottom = 14.0
+theme = SubResource("Theme_umkwb")
+
+[node name="Button1" type="Button" parent="Actions"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = -2.0
+offset_right = 57.0
+offset_bottom = 19.0
+size_flags_horizontal = 0
+size_flags_vertical = 7
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+mouse_filter = 2
+theme = ExtResource("4_baifg")
+button_mask = 0
+text = "atacc"
+text_direction = 1
+script = ExtResource("4_2han0")
+
+[node name="Button2" type="Button" parent="Actions"]
+layout_mode = 2
+offset_left = 72.0
+offset_top = -2.0
+offset_right = 129.0
+offset_bottom = 19.0
+size_flags_horizontal = 0
+size_flags_vertical = 7
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+mouse_filter = 2
+theme = ExtResource("4_baifg")
+button_mask = 0
+text = "protecc"
+text_direction = 1
+script = ExtResource("4_2han0")
+
+[node name="Button3" type="Button" parent="Actions"]
+layout_mode = 2
+offset_left = 144.0
+offset_top = -2.0
+offset_right = 190.0
+offset_bottom = 19.0
+size_flags_horizontal = 0
+size_flags_vertical = 7
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+mouse_filter = 2
+theme = ExtResource("4_baifg")
+button_mask = 0
+text = "magicc"
+text_direction = 1
+script = ExtResource("4_2han0")
+
+[node name="Button4" type="Button" parent="Actions"]
+layout_mode = 2
+offset_left = 204.0
+offset_top = -2.0
+offset_right = 271.0
+offset_bottom = 19.0
+size_flags_horizontal = 0
+size_flags_vertical = 7
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+mouse_filter = 2
+theme = ExtResource("4_baifg")
+button_mask = 0
+text = "artifackt"
+text_direction = 1
+script = ExtResource("4_2han0")
+
+[node name="ButtonMenu" type="TabContainer" parent="Actions"]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = -38.0
+offset_right = 284.0
+offset_bottom = 19.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ocyla")
+clip_tabs = false
+tabs_visible = false
+
+[node name="Atacc" type="Control" parent="Actions/ButtonMenu"]
+layout_mode = 2
+
+[node name="List" type="ScrollContainer" parent="Actions/ButtonMenu/Atacc"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_right = -137.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_baifg")
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="Actions/ButtonMenu/Atacc/List"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="BattleListItem" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem2" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem3" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem4" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem5" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem6" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem7" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem8" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem9" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem10" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem11" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem12" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem13" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem14" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem15" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem16" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem17" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem18" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem19" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem20" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem21" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem22" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem23" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem24" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem25" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="BattleListItem26" type="Button" parent="Actions/ButtonMenu/Atacc/List/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_xg06a")
+button_mask = 0
+text = "claw"
+
+[node name="Protecc" type="Control" parent="Actions/ButtonMenu"]
+visible = false
+layout_mode = 2
+
+[node name="Magicc" type="Control" parent="Actions/ButtonMenu"]
+visible = false
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="Actions/ButtonMenu/Magicc"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_baifg")
+
+[node name="Artifackt" type="Control" parent="Actions/ButtonMenu"]
+visible = false
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="Actions/ButtonMenu/Artifackt"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_baifg")
