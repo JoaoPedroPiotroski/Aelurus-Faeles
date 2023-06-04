@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8bngudlputjb"]
+
+[ext_resource type="Script" path="res://scripts/p_app.gd" id="1_73y0q"]
+[ext_resource type="Script" path="res://scripts/odissey_ground.gd" id="2_ucid5"]
+[ext_resource type="Texture2D" uid="uid://bg7qwujeuxjjc" path="res://assets/images/racing_game/rcar.png" id="3_g6wel"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jrcks"]
+seed = 91
+fractal_lacunarity = 2.113
+fractal_gain = 0.276
+fractal_ping_pong_strength = 3.003
+domain_warp_enabled = true
+
+[node name="Odissey" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_73y0q")
+title = "Odissey"
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Ground" type="Line2D" parent="World"]
+position = Vector2(-50, 108)
+width = 100.0
+default_color = Color(0, 0.74902, 0.223529, 1)
+script = ExtResource("2_ucid5")
+noise = SubResource("FastNoiseLite_jrcks")
+steps = 100.0
+snap = 5.0
+amplitude = 2.0
+multiplier = 3.145
+
+[node name="Player" type="Sprite2D" parent="World/Ground"]
+position = Vector2(75, 1)
+texture = ExtResource("3_g6wel")
+centered = false

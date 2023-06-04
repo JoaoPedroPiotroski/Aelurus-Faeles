@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://ddov2ii5jy0vn"]
+
+[ext_resource type="FontFile" uid="uid://pkfvmnlpkljx" path="res://assets/fonts/Cute_Aurora_demo.ttf" id="1_ixxal"]
+
+[resource]
+base_font = ExtResource("1_ixxal")
+variation_embolden = 0.65

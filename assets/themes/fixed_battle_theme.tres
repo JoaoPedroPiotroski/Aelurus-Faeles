@@ -1,0 +1,76 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://n544tnd1xo5o"]
+
+[ext_resource type="FontVariation" uid="uid://ddov2ii5jy0vn" path="res://assets/fonts/pixel_small.tres" id="1_hg2td"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47jn6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.172549, 0.552941, 0.788235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.8, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(1, 0.8, 0, 0.65098)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4w6vj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.788235, 0.25098, 0.25098, 0.835294)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.76, 0.904, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.427451)
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euu8r"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.890196, 0.105882, 0.145098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.882353, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(1, 0.6, 0, 0.576471)
+shadow_size = 4
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 0.8, 0, 1)
+Button/colors/font_outline_color = Color(0.0627451, 0.0627451, 0.0784314, 1)
+Button/colors/font_pressed_color = Color(1, 0.815686, 0, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 12
+Button/fonts/font = ExtResource("1_hg2td")
+Button/styles/focus = SubResource("StyleBoxFlat_47jn6")
+Button/styles/normal = SubResource("StyleBoxFlat_4w6vj")
+Button/styles/pressed = SubResource("StyleBoxFlat_euu8r")

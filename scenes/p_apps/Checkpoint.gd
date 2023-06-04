@@ -29,12 +29,9 @@ func _process(delta):
 	
 func _on_body_entered(body: Node2D):
 	if body is RacingCar:
-		print('é carro')
 		if body.current_checkpoint == get_node(previous):
-			print('é igual')
 			body.current_checkpoint = self
 			if finish_line:
-				print('é finish')
 				last_lap = lap_timer
 				emit_signal('last_time_update', last_lap)
 				if lap_timer < best_lap or best_lap == 0:
