@@ -115,3 +115,10 @@ select={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
+[shader_globals]
+
+player_position={
+"type": "vec2",
+"value": Vector2(0, 0)
+}

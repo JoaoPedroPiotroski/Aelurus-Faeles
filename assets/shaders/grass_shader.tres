@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://c3fdetevtuxgv"]
+
+[ext_resource type="Shader" path="res://assets/shaders/grass_shader.gdshader" id="1_4e5ne"]
+
+[sub_resource type="Curve" id="Curve_qxbv1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wd0h4"]
+curve = SubResource("Curve_qxbv1")
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_4e5ne")
+shader_parameter/base_color = Color(0.415686, 0.800724, 0.188235, 2)
+shader_parameter/shadow_color = Color(0.247059, 0.247059, 0.247059, 1)
+shader_parameter/shadow_mix = 0.0
+shader_parameter/player_dist_cutoff = 18.432
+shader_parameter/character_push_strength = -4.0
+shader_parameter/character_distance_falloff_curve = SubResource("CurveTexture_wd0h4")

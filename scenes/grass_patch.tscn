@@ -1,0 +1,1419 @@
+[gd_scene load_steps=5 format=3 uid="uid://bng0suy17koth"]
+
+[ext_resource type="Script" path="res://scripts/GrassPatch.gd" id="1_cjux8"]
+[ext_resource type="Material" uid="uid://c3fdetevtuxgv" path="res://assets/shaders/grass_shader.tres" id="2_wuuhi"]
+[ext_resource type="Texture2D" uid="uid://cfkcy5skbow4p" path="res://assets/images/grass_blade.png" id="3_y4k6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yppeo"]
+size = Vector2(174, 6)
+
+[node name="GrassPatch" type="Area2D"]
+visibility_layer = 2
+z_index = 1
+position = Vector2(155, 0)
+script = ExtResource("1_cjux8")
+extents = 174.0
+grass_height = 1.5
+layer_x_delta = 0.733
+layer_y_delta = -0.249
+grass_color = Color(0.415686, 0.745098, 0.188235, 1)
+color_randomness = 0.082
+color_shadow = Color(0.247059, 0.247059, 0.247059, 1)
+
+[node name="Blades" type="Node2D" parent="."]
+
+[node name="597970" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-87, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597971" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-86, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597972" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-85, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597973" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-84, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597974" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-83, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597975" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-82, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597976" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-81, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597977" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-80, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597978" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-79, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597979" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-78, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597980" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-77, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597981" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-76, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597982" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-75, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597983" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-74, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597984" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-73, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597985" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-72, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597986" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-71, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597987" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-70, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597988" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-69, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597989" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-68, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597990" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-67, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597991" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-66, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597992" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-65, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597993" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-64, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597994" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-63, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597995" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-62, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597996" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-61, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597997" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-60, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597998" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-59, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="597999" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-58, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598000" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-57, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598001" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-56, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598002" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-55, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598003" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-54, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598004" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-53, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598005" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-52, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598006" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-51, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598007" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-50, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598008" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-49, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598009" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-48, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598010" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-47, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598011" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-46, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598012" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-45, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598013" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-44, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598014" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-43, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598015" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-42, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598016" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-41, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598017" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-40, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598018" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-39, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598019" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-38, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598020" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-37, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598021" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-36, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598022" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-35, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598023" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-34, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598024" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-33, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598025" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-32, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598026" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-31, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598027" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-30, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598028" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-29, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598029" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-28, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598030" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-27, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598031" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-26, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598032" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-25, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598033" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-24, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598034" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-23, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598035" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-22, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598036" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-21, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598037" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-20, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598038" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-19, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598039" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-18, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598040" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-17, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598041" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-16, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598042" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-15, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598043" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-14, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598044" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-13, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598045" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-12, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598046" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-11, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598047" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-10, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598048" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-9, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598049" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-8, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598050" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-7, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598051" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-6, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598052" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-5, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598053" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-4, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598054" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-3, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598055" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-2, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598056" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(-1, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598057" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(0, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598058" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(1, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598059" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(2, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598060" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(3, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598061" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(4, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598062" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(5, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598063" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(6, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598064" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(7, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598065" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(8, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598066" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(9, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598067" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(10, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598068" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(11, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598069" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(12, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598070" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(13, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598071" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(14, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598072" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(15, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598073" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(16, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598074" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(17, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598075" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(18, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598076" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(19, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598077" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(20, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598078" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(21, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598079" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(22, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598080" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(23, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598081" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(24, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598082" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(25, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598083" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(26, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598084" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(27, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598085" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(28, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598086" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(29, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598087" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(30, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598088" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(31, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598089" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(32, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598090" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(33, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598091" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(34, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598092" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(35, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598093" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(36, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598094" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(37, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598095" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(38, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598096" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(39, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598097" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(40, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598098" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(41, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598099" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(42, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598100" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(43, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598101" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(44, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598102" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(45, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598103" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(46, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598104" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(47, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598105" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(48, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598106" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(49, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598107" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(50, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598108" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(51, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598109" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(52, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598110" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(53, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598111" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(54, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598112" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(55, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598113" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(56, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598114" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(57, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598115" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(58, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598116" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(59, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598117" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(60, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598118" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(61, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598119" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(62, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598120" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(63, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598121" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(64, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598122" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(65, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598123" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(66, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598124" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(67, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598125" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(68, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598126" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(69, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598127" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(70, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598128" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(71, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598129" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(72, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598130" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(73, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598131" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(74, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598132" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(75, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598133" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(76, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598134" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(77, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598135" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(78, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598136" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(79, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598137" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(80, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598138" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(81, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598139" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(82, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598140" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(83, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598141" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(84, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598142" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(85, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="598143" type="Sprite2D" parent="Blades"]
+visibility_layer = 2
+material = ExtResource("2_wuuhi")
+position = Vector2(86, -5)
+scale = Vector2(0.5, 1.5)
+texture = ExtResource("3_y4k6l")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_yppeo")
