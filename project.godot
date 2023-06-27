@@ -22,7 +22,6 @@ window/size/viewport_height=180
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
 
 [editor]
 
@@ -112,6 +111,12 @@ select={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Default"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
@@ -119,6 +124,10 @@ textures/canvas_textures/default_texture_filter=0
 [shader_globals]
 
 player_position={
+"type": "vec2",
+"value": Vector2(0, 0)
+}
+player_velocity={
 "type": "vec2",
 "value": Vector2(0, 0)
 }

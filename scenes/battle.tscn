@@ -59,7 +59,7 @@ offset_right = 144.0
 offset_bottom = 22.0
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Allies"]
+[node name="AlliesBox" type="HBoxContainer" parent="Allies"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,17 +67,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Ally" type="Control" parent="Allies/HBoxContainer"]
+[node name="Ally" type="Control" parent="Allies/AlliesBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Allies/HBoxContainer/Ally"]
+[node name="Sprite" type="Sprite2D" parent="Allies/AlliesBox/Ally"]
 position = Vector2(24, 40)
 scale = Vector2(2, 2)
 texture = ExtResource("2_5yp6i")
 centered = false
 
-[node name="TextureProgressBar" type="ProgressBar" parent="Allies/HBoxContainer/Ally"]
+[node name="TextureProgressBar" type="ProgressBar" parent="Allies/AlliesBox/Ally"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -94,17 +94,17 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
 value = 25.0
 show_percentage = false
 
-[node name="Ally2" type="Control" parent="Allies/HBoxContainer"]
+[node name="Ally2" type="Control" parent="Allies/AlliesBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Allies/HBoxContainer/Ally2"]
+[node name="Sprite2D" type="Sprite2D" parent="Allies/AlliesBox/Ally2"]
 position = Vector2(22, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("2_5yp6i")
 centered = false
 
-[node name="TextureProgressBar" type="ProgressBar" parent="Allies/HBoxContainer/Ally2"]
+[node name="TextureProgressBar" type="ProgressBar" parent="Allies/AlliesBox/Ally2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -135,7 +135,7 @@ offset_bottom = 22.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Enemies"]
+[node name="EnemiesBox" type="HBoxContainer" parent="Enemies"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -143,17 +143,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="enemy" type="Control" parent="Enemies/HBoxContainer"]
+[node name="enemy" type="Control" parent="Enemies/EnemiesBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/HBoxContainer/enemy"]
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/EnemiesBox/enemy"]
 position = Vector2(24, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("2_5yp6i")
 centered = false
 
-[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/HBoxContainer/enemy"]
+[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/EnemiesBox/enemy"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -170,17 +170,71 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
 value = 25.0
 show_percentage = false
 
-[node name="enemy2" type="Control" parent="Enemies/HBoxContainer"]
+[node name="enemy2" type="Control" parent="Enemies/EnemiesBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/HBoxContainer/enemy2"]
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/EnemiesBox/enemy2"]
 position = Vector2(24, 40)
 scale = Vector2(2, 2)
 texture = ExtResource("2_5yp6i")
 centered = false
 
-[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/HBoxContainer/enemy2"]
+[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/EnemiesBox/enemy2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -20.0
+offset_right = -15.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
+theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
+value = 25.0
+show_percentage = false
+
+[node name="enemy3" type="Control" parent="Enemies/EnemiesBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/EnemiesBox/enemy3"]
+position = Vector2(24, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5yp6i")
+centered = false
+
+[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/EnemiesBox/enemy3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -20.0
+offset_right = -15.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
+theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
+value = 25.0
+show_percentage = false
+
+[node name="enemy4" type="Control" parent="Enemies/EnemiesBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/EnemiesBox/enemy4"]
+position = Vector2(24, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5yp6i")
+centered = false
+
+[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/EnemiesBox/enemy4"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0

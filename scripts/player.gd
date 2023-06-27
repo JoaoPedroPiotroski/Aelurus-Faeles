@@ -1,13 +1,15 @@
 class_name Player
 extends Entity
 
-var acceleration = 10
+var acceleration = 4
 var max_speed = 80
-var friction = 0.95
+var friction = 0.98
 var gravity = 8
 var jump_force = 180
 
 var jump_timer : float = 0
+var shader_position : Vector2
+var shader_velocity : Vector2
 
 @onready var camera: Camera2D = $Camera2D
 @onready var sprite: Sprite2D = $Sprite
@@ -21,16 +23,22 @@ func take_input(delta : float):
 
 func _physics_process(delta: float) -> void:
 	take_input(delta)
-	RenderingServer.global_shader_parameter_set('player_position', global_position)
-
 	
+	# Global shader thing
+	shader_position = lerp(shader_position, global_position, 0.2 + pow(velocity.length()/ 80, 2.))
+	shader_velocity = lerp(shader_velocity, velocity, 0.2 + pow(velocity.length()/ 80, 2.))
+	RenderingServer.global_shader_parameter_set('player_position', shader_position)
+	RenderingServer.global_shader_parameter_set('player_velocity', shader_velocity)
+
+	#prototype animation thing
 	if velocity.x != 0:
 		if !$AnimationPlayer.is_playing():
 			$AnimationPlayer.play('walk')
 		sprite.flip_h = velocity.x < 0
 	else:
 		$AnimationPlayer.stop()
-		
+	
+	# Camera stuff
 	camera.drag_vertical_enabled = !is_on_floor()
 	if is_equal_approx(abs(velocity.x), max_speed):
 		camera.offset.x = lerp(camera.offset.x, move_direction.x * (max_speed), 0.5 * delta)
@@ -39,6 +47,8 @@ func _physics_process(delta: float) -> void:
 	if not are_signs_equal(camera.offset.x, move_direction.x):
 		camera.offset.x = lerp(camera.offset.x, move_direction.x * (max_speed), delta)
 	camera.drag_horizontal_enabled = abs(velocity.x) < max_speed / 2.
+	
+	#movement
 	velocity += acceleration * move_direction
 	velocity.x *= friction
 	velocity.x = clamp(velocity.x, -max_speed, max_speed)

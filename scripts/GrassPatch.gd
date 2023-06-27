@@ -73,7 +73,7 @@ func create_grass_patch():
 			blade.texture = g_blade_tex
 			blade.centered = false
 			#blade.self_modulate = grass_color + Color(0, randf_range(-color_randomness, color_randomness), 0) - (color_shadow * layer)
-			blade.scale.x = 0.5
+			blade.scale.x = 0.75
 			blade.visibility_layer = visibility_layer
 			blade.scale.y = blade_height * grass_height
 			blade.z_index = layer
@@ -87,9 +87,6 @@ func create_grass_patch():
 			blade.position.x = float(x) + (layer_x_delta * layer)
 			blade.position.x /= 2
 			blade.position.y += 1. - blade.scale.y * 4
-			print('positionx: ', blade.position.x)
 			
 			#print((1. / (layer+1.)))
 		blade_height += layer_y_delta
-		#print(blade_height)
-		print('positionx_delta: ', (layer_x_delta * layer))

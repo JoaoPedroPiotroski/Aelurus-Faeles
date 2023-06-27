@@ -39,6 +39,20 @@ var action : BattleAction
 var turn_order : Array[Fighter] = [] 
 ## Current turn
 var turn : int = 0 
+## Amount of pixels to be vertically offset for each fighter
+var v_offset = 5
+
+@onready var allies_box: HBoxContainer = $Allies/AlliesBox
+@onready var enemies_box: HBoxContainer = $Enemies/EnemiesBox
+
+func start(ally_participants : Array[Fighter], enemy_participants : Array[Fighter]):
+	enemy_participants.reverse()
+	var counter : int = 0
+	for participant in ally_participants:
+		allies_box.add_child(participant)
+		counter += 1
+	for participant in enemy_participants:
+		counter -= 1
 
 func _ready() -> void:
 	emit_signal("intro_start")

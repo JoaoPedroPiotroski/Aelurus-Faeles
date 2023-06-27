@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://demn5txde8y5v"]
+
+[ext_resource type="Script" path="res://scripts/enemy_propagator.gd" id="1_2pej3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jy2s"]
+radius = 1.0
+
+[node name="EnemyPropagator" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_2pej3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4jy2s")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 0.00999999, 0.00999999, 1)
+invert_enabled = true
+invert_border = 1.0
+polygon = PackedVector2Array(1, -1, 0, -1, -1, -1, -1, 1, 1, 1, 1, -1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
