@@ -2,13 +2,21 @@ class_name Fighter
 extends Node
 
 @export var stats : FighterStats
+var actions : Array[BattleAction]
+var status_effects : Array[StatusEffect]
 var rounds : int = 0
 var turns : int = 0
 
 func _init() -> void:
 	add_to_group("Fighters")
 
+func _ready() -> void:
+	for act_path in stats.action_paths:
+		actions.append(load(act_path))
+
 func _on_round_start():
+	return
+	@warning_ignore("unreachable_code")
 	stats.extra_health = 0
 	stats.extra_mana = 0
 	stats.extra_strength = 0

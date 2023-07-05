@@ -32,7 +32,7 @@ noise = SubResource("FastNoiseLite_c0o0d")
 [resource]
 resource_local_to_scene = true
 shader = ExtResource("1_4e5ne")
-shader_parameter/base_color = Color(0.415686, 0.686803, 0.188235, 2)
+shader_parameter/base_color = Color(0.415686, 0.793523, 0.188235, 2)
 shader_parameter/shadow_color = Color(0.247059, 0.247059, 0.247059, 1)
 shader_parameter/shadow_mix = 0.0
 shader_parameter/player_dist_cutoff = 32.0

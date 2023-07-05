@@ -54,8 +54,7 @@ var additional_initiative : float = 0 :
 		additional_initiative = value
 		initiative = base_initiative + additional_initiative
 var initiative : float 
-var actions : Array[BattleAction]
-var status_effects : Array[StatusEffect]
+@export var action_paths : Array[String]
 
 # Extra stats
 var extra_health : float = 0 :

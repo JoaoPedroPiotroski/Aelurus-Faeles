@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://lwywgu52v60w"]
+[gd_scene load_steps=18 format=3 uid="uid://lwywgu52v60w"]
 
 [ext_resource type="Texture2D" uid="uid://dvot18cge2i4x" path="res://assets/images/ceuzinhobonitocomcenario.png" id="1_8dwwu"]
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_m3wp8"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://scripts/battle_button.gd" id="4_2han0"]
 [ext_resource type="Theme" uid="uid://n544tnd1xo5o" path="res://assets/themes/fixed_battle_theme.tres" id="5_hd2jm"]
 [ext_resource type="Theme" uid="uid://dqa2gn4bdbdww" path="res://assets/themes/list_theme.tres" id="6_xg06a"]
+[ext_resource type="Script" path="res://scripts/fighter.gd" id="8_eayxb"]
+[ext_resource type="Script" path="res://scripts/fighter_stats.gd" id="9_y5bvl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skeny"]
 bg_color = Color(0.145098, 0.145098, 0.145098, 1)
@@ -31,6 +33,16 @@ border_color = Color(1, 0, 0, 1)
 Panel/styles/panel = SubResource("StyleBoxFlat_pobtd")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ocyla"]
+
+[sub_resource type="Resource" id="Resource_7gh5t"]
+script = ExtResource("9_y5bvl")
+base_max_health = 0.0
+base_max_mana = 0.0
+base_strength = 0.0
+base_defense = 0.0
+base_speed = 0.0
+base_initiative = 0.0
+action_paths = Array[String]([""])
 
 [node name="battle" type="Control"]
 layout_mode = 3
@@ -623,3 +635,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Fighter" type="Node" parent="."]
+script = ExtResource("8_eayxb")
+stats = SubResource("Resource_7gh5t")

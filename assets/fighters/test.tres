@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FighterStats" load_steps=2 format=3 uid="uid://clwbrwpmkvk4m"]
+
+[ext_resource type="Script" path="res://scripts/fighter_stats.gd" id="1_yh83y"]
+
+[resource]
+script = ExtResource("1_yh83y")
+base_max_health = 0.0
+base_max_mana = 0.0
+base_strength = 0.0
+base_defense = 0.0
+base_speed = 0.0
+base_initiative = 0.0
+actions = Array[Resource("res://scripts/battle_action.gd")]([])
