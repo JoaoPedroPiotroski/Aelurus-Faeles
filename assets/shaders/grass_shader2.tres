@@ -1,0 +1,42 @@
+[gd_resource type="ShaderMaterial" load_steps=9 format=3 uid="uid://co0eq1cx8a3h0"]
+
+[ext_resource type="Shader" path="res://assets/shaders/grass_shader2.gdshader" id="1_1rs23"]
+
+[sub_resource type="Curve" id="Curve_qxbv1"]
+_data = [Vector2(0, 0), 0.0, 0.11866, 0, 0, Vector2(1, 1), 3.17046, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wd0h4"]
+curve = SubResource("Curve_qxbv1")
+
+[sub_resource type="Curve" id="Curve_la6ac"]
+min_value = 0.5
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_uga4k"]
+curve = SubResource("Curve_la6ac")
+
+[sub_resource type="Gradient" id="Gradient_q26j0"]
+offsets = PackedFloat32Array(0, 0.483871, 1)
+colors = PackedColorArray(0.6862, 0.94, 0.73696, 1, 0.24843, 0.63, 0.1323, 1, 0.1166, 0.22, 0.14762, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_c0o0d"]
+seed = 403
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ximo7"]
+seamless = true
+color_ramp = SubResource("Gradient_q26j0")
+noise = SubResource("FastNoiseLite_c0o0d")
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_1rs23")
+shader_parameter/base_color = Color(0.415686, 0.7803, 0.188235, 2)
+shader_parameter/shadow_color = Color(0.247059, 0.247059, 0.247059, 1)
+shader_parameter/shadow_mix = 0.0
+shader_parameter/player_dist_cutoff = 32.0
+shader_parameter/character_push_strength = -2.0
+shader_parameter/character_distance_falloff_curve = SubResource("CurveTexture_wd0h4")
+shader_parameter/color_noise = SubResource("NoiseTexture2D_ximo7")
+shader_parameter/character_vel_curve = SubResource("CurveTexture_uga4k")

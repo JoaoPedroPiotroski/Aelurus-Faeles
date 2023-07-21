@@ -29,6 +29,7 @@ enum TARGETS {
 	SELF
 }
 
+var started : bool = false
 ## The one calling the action
 var agitator : Fighter 
 ## The target of the action
@@ -37,25 +38,34 @@ var target : Fighter
 var action : BattleAction
 ## Order at which turns will be called
 var turn_order : Array[Fighter] = [] 
+## The allies to participate in the battle
+var ally_participants : Array[Fighter] = []
+## The enemies to participate in the battle
+var enemy_participants : Array[Fighter] = []
+## Current round
+var round : int = 0
 ## Current turn
-var turn : int = 0 
+var turn : int = 0
 ## Amount of pixels to be vertically offset for each fighter
 var v_offset = 5
 
 @onready var allies_box: HBoxContainer = $Allies/AlliesBox
 @onready var enemies_box: HBoxContainer = $Enemies/EnemiesBox
 
-func start(ally_participants : Array[Fighter], enemy_participants : Array[Fighter]):
-	enemy_participants.reverse()
+func start(s_ally_participants : Array[Fighter], s_enemy_participants : Array[Fighter]):
+	ally_participants = s_ally_participants
+	enemy_participants = s_enemy_participants
+	s_enemy_participants.reverse()
 	var counter : int = 0
-	for participant in ally_participants:
+	for participant in s_ally_participants:
 		allies_box.add_child(participant)
 		counter += 1
-	for participant in enemy_participants:
+	for participant in s_enemy_participants:
 		counter -= 1
+	emit_signal("intro_start")
 
 func _ready() -> void:
-	emit_signal("intro_start")
+	pass
 
 ## For the time being does nothing but call for allies to enter
 func _on_intro_started(): 

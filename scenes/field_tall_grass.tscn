@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dno4kei3racul"]
+
+[ext_resource type="Texture2D" uid="uid://x4n65kbvx7hh" path="res://assets/images/tall_grass_tiles.png" id="1_myi26"]
+
+[node name="FieldTallGrass" type="Sprite2D"]
+texture = ExtResource("1_myi26")
+centered = false
+hframes = 4
+vframes = 4
+frame = 3
