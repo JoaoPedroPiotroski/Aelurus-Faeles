@@ -13,6 +13,8 @@ var shader_velocity : Vector2
 
 @onready var camera: Camera2D = $Camera2D
 @onready var sprite: Sprite2D = $Sprite
+
+
 func take_input(delta : float):
 	jump_timer -= delta
 	move_direction = Vector2.ZERO

@@ -24,7 +24,6 @@ func _ready():
 
 	
 func update_line():
-	print('Ooooi')
 	clear_points()
 	var last_curve_end = 0
 	var x_pos = 0

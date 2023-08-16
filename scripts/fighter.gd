@@ -7,12 +7,16 @@ var status_effects : Array[StatusEffect]
 var rounds : int = 0
 var turns : int = 0
 
+var my_entities : Array[Entity] = []
+
 func _init() -> void:
 	add_to_group("Fighters")
 
 func _ready() -> void:
 	for act_path in stats.action_paths:
 		actions.append(load(act_path))
+	for action in actions:
+		action.assign_governor(self)
 
 func _on_round_start():
 	return

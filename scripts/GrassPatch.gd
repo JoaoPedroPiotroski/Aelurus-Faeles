@@ -62,10 +62,17 @@ func _ready() -> void:
 	
 func create_grass_patch():
 	#collision_shape_2d.shape.set_deferred("size:x", extents)
-	collision_shape_2d.shape.size = Vector2(extents, 4 * grass_height)
-	collision_shape_2d.position.y = -4 * grass_height / 2
-	for blade in blades.get_children():
-		blade.queue_free()
+	if not Engine.is_editor_hint():
+		collision_shape_2d.shape.size = Vector2(extents, 4 * grass_height)
+		collision_shape_2d.position.y = -4 * grass_height / 2
+	if blades:
+		for blade in blades.get_children():
+			blade.queue_free()
+	else:
+		var b = Node2D.new()
+		add_child(b)
+		b.name = "Blades"
+		blades = b
 	var blade_height : float = 1.0
 	for layer in range(layers):
 		for x in range(-extents, extents, 2):

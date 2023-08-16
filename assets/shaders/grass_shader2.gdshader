@@ -19,7 +19,7 @@ void vertex(){
 	pos = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
 	
 	vec2 dir_to_player = player_position.xy - pos.xy;
-	float dist_to_player = length(dir_to_player);
+	float dist_to_player = 1000.;
 	float falloff = 1.0 - smoothstep(0.0, 1.0, dist_to_player/player_dist_cutoff);
 	dir_to_player = normalize(dir_to_player);
 	falloff_curve = texture(character_distance_falloff_curve, vec2(falloff) * (texture(character_vel_curve, abs(vec2(length(player_velocity))) / vec2(80.)).x)  * vec2(1., float(dir_to_player.y < 0.))).x ;

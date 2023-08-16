@@ -13,7 +13,6 @@ var grass_shader = preload("res://assets/shaders/grass_shader2.tres")
 @onready var sprites: Node2D = $Sprites
 
 func _ready() -> void:
-	z_index = global_position.y
 	spawn_field()
 
 func spawn_grass(pos : Vector2):
@@ -34,7 +33,6 @@ func spawn_grass(pos : Vector2):
 func spawn_row(pos, amount):
 	for i in range(amount):
 		if randi_range(0, 100) < 100 * smoothstep(-36, 16, pos.y):
-			print(smoothstep(-36, 16, pos.y))
 			spawn_grass(Vector2(
 				pos.x + (i * 16), pos.y
 			))
@@ -46,5 +44,8 @@ func spawn_field():
 		spawn_row(Vector2(
 			0, height_offset * h
 		), width)
-		height_offset *= 0.9
 		density -= 100 / height
+
+
+func _on_draw() -> void:
+	spawn_field()

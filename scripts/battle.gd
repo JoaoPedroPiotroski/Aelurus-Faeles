@@ -55,6 +55,9 @@ var v_offset = 5
 func start(s_ally_participants : Array[Fighter], s_enemy_participants : Array[Fighter]):
 	ally_participants = s_ally_participants
 	enemy_participants = s_enemy_participants
+	# test purposes
+	ally_participants = [$Fighter, $Fighter2]
+	enemy_participants = [$Fighter3, $Fighter4]
 	s_enemy_participants.reverse()
 	var counter : int = 0
 	for participant in s_ally_participants:

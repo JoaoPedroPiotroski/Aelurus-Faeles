@@ -3,9 +3,11 @@ extends Entity
 
 var components : Array[Component] = []
 var enemies_found : Array[Enemy] = []
-@onready var propagator = preload("res://scenes/enemy_propagator.tscn")
+var propagator
+var propagator_path = "res://scenes/enemy_propagator.tscn"
 
 func _ready() -> void:
+	propagator = load(propagator_path)
 	add_to_group('enemies')
 	for child in get_children():
 		if child is Component:
@@ -26,7 +28,7 @@ func propagate(starter : Enemy) -> void:
 		return
 	get_tree().call_group('enemies', 'stop')
 	print('\n----\nPROPAGANDO DE: ', name)
-	var p_inst := propagator.instantiate() 
+	var p_inst : EnemyPropagator = propagator.instantiate() 
 	p_inst.governor = starter
 	p_inst.connect('nothing_found', starter.start_battle)
 	p_inst.connect('propagate_found', starter._on_enemy_found)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbasmfhv3iwkn"]
+
+[ext_resource type="Script" path="res://DamagingAction.gd" id="1_ucsnl"]
+
+[node name="DamagingAction" type="Node"]
+script = ExtResource("1_ucsnl")
+title = "Claw"
