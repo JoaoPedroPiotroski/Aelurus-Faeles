@@ -3,6 +3,8 @@
 [ext_resource type="Shader" path="res://testtest.gdshader" id="1_n3v7w"]
 
 [sub_resource type="Gradient" id="Gradient_qf306"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.690196, 0.0431373, 0.411765, 1, 0.647059, 0.368627, 0.654902, 1, 0.113725, 0.109804, 0.788235, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_k2bcr"]
 gradient = SubResource("Gradient_qf306")
@@ -24,9 +26,9 @@ noise = SubResource("FastNoiseLite_hwxkv")
 
 [resource]
 shader = ExtResource("1_n3v7w")
-shader_parameter/max_iter = 2000.0
+shader_parameter/max_iter = 10000.0
 shader_parameter/scale = 1.5
-shader_parameter/offset = Vector2(1, 1.5)
-shader_parameter/color_div = 32.0
+shader_parameter/offset = Vector2(1, 1.6)
+shader_parameter/color_div = 12.0
 shader_parameter/gradient = SubResource("GradientTexture1D_k2bcr")
 shader_parameter/n1 = SubResource("NoiseTexture2D_c7nsi")

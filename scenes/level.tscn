@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdb3u5mks7krr"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_yxnw0"]
+[ext_resource type="Script" path="res://scripts/leveloutsideconnection.gd" id="2_cy8iq"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_yxnw0")
+
+[node name="LevelPlayArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="OutsideConnections" type="Node" parent="."]
+
+[node name="LevelOutsideConnection" type="Marker2D" parent="OutsideConnections"]
+script = ExtResource("2_cy8iq")
