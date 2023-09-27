@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dc5o1mgd1774q"]
+[gd_scene load_steps=10 format=3 uid="uid://dc5o1mgd1774q"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_v6f08"]
 [ext_resource type="Script" path="res://scripts/leveloutsideconnection.gd" id="2_k7ja2"]
 [ext_resource type="Texture2D" uid="uid://vo5r216a7v0c" path="res://assets/images/grass_green.png" id="3_qh73a"]
 [ext_resource type="Texture2D" uid="uid://kkkuieeqie1y" path="res://assets/images/scaffold.png" id="4_3bfga"]
+[ext_resource type="PackedScene" uid="uid://c36xjyspx6jek" path="res://scenes/enemy_test.tscn" id="5_hfsv6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juu3h"]
-size = Vector2(144, 88)
+size = Vector2(112, 88)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m2wgo"]
 resource_name = "aa"
@@ -171,9 +172,8 @@ script = ExtResource("1_v6f08")
 level_name = "DemoLevel"
 
 [node name="LevelPlayArea" type="Area2D" parent="."]
-visible = false
-collision_layer = 0
-collision_mask = 2
+collision_layer = 65535
+collision_mask = 65535
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelPlayArea"]
 position = Vector2(0, -4)
@@ -195,4 +195,12 @@ target_level = "DemoLevel3"
 z_index = -40
 tile_set = SubResource("TileSet_7ehcs")
 format = 2
-layer_0/tile_data = PackedInt32Array(262137, 1, 0, 262138, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 262136, 1, 0, 196600, 1, 0, 196615, 1, 0, 131079, 1, 0, 65543, 1, 0, 131064, 1, 0, 131063, 1, 0, 196599, 1, 0, 262135, 1, 0, 327671, 1, 0, 327672, 1, 0, 327673, 1, 0, 327674, 1, 0, 327675, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 196616, 1, 0, 131080, 1, 0, 65544, 1, 0, -196601, 1, 0, -196600, 1, 0, -262136, 1, 0, -262137, 1, 0, -327672, 1, 0, -327673, 1, 0, -327674, 1, 0, -327675, 1, 0, -327676, 1, 0, -327677, 1, 0, -327678, 1, 0, -327679, 1, 0, -327680, 1, 0, -262145, 1, 0, -262146, 1, 0, -262147, 1, 0, -262148, 1, 0, -262149, 1, 0, -262150, 1, 0, -262151, 1, 0, -262152, 1, 0, -262153, 1, 0, -196617, 1, 0, -131081, 1, 0, -131080, 1, 0, -196616, 1, 0, -327689, 1, 0, -327688, 1, 0, -327687, 1, 0, -327683, 1, 0, -327684, 1, 0, -327685, 1, 0, -327686, 1, 0, -327682, 1, 0, -327681, 1, 0, -393216, 1, 0, -393215, 1, 0, -393214, 1, 0, -393213, 1, 0, -393212, 1, 0, -393211, 1, 0, -393210, 1, 0, -393209, 1, 0, -393208, 1, 0)
+layer_0/tile_data = PackedInt32Array(262137, 1, 0, 262138, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 262136, 1, 0, 196615, 1, 0, 262135, 1, 0, 327671, 1, 0, 327672, 1, 0, 327673, 1, 0, 327674, 1, 0, 327675, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 196616, 1, 0, -196601, 1, 0, -196600, 1, 0, -262136, 1, 0, -262137, 1, 0, -327672, 1, 0, -327673, 1, 0, -327674, 1, 0, -327675, 1, 0, -327676, 1, 0, -327677, 1, 0, -327678, 1, 0, -327679, 1, 0, -327680, 1, 0, -262145, 1, 0, -262146, 1, 0, -262147, 1, 0, -262148, 1, 0, -262149, 1, 0, -262150, 1, 0, -262151, 1, 0, -262152, 1, 0, -262153, 1, 0, -196617, 1, 0, -131081, 1, 0, -131080, 1, 0, -196616, 1, 0, -327689, 1, 0, -327688, 1, 0, -327687, 1, 0, -327683, 1, 0, -327684, 1, 0, -327685, 1, 0, -327686, 1, 0, -327682, 1, 0, -327681, 1, 0, -393216, 1, 0, -393215, 1, 0, -393214, 1, 0, -393213, 1, 0, -393212, 1, 0, -393211, 1, 0, -393210, 1, 0, -393209, 1, 0, -393208, 1, 0)
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="EnemyTest2" parent="Entities" instance=ExtResource("5_hfsv6")]
+position = Vector2(-50, 14)
+
+[node name="EnemyTest3" parent="Entities" instance=ExtResource("5_hfsv6")]
+position = Vector2(-30, 14)

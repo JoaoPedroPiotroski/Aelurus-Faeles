@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://c36xjyspx6jek"]
+
+[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_u2r5v"]
+[ext_resource type="Script" path="res://scripts/StateMachine.gd" id="2_cm3nk"]
+[ext_resource type="Script" path="res://scripts/TestEnemyIdleState.gd" id="3_k4x2w"]
+[ext_resource type="Script" path="res://scripts/TestChaseState.gd" id="4_wxxvs"]
+[ext_resource type="Script" path="res://scripts/gravitycomponent.gd" id="5_impnr"]
+[ext_resource type="Script" path="res://scripts/VelocityClampingComponent.gd" id="6_d7g1r"]
+[ext_resource type="Script" path="res://scripts/movecomponent.gd" id="7_vm74l"]
+[ext_resource type="Texture2D" uid="uid://db0qitjoo1501" path="res://assets/images/player.png" id="8_4gcji"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agjlq"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvtja"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sj2xp"]
+radius = 7.0
+
+[node name="EnemyTest2" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_u2r5v")
+
+[node name="GroundDetector1" type="RayCast2D" parent="."]
+z_index = 2
+position = Vector2(-4, 4)
+target_position = Vector2(-3, 0)
+
+[node name="GroundDetector2" type="RayCast2D" parent="."]
+z_index = 2
+position = Vector2(7, 4)
+target_position = Vector2(3, 0)
+
+[node name="PlayerDetector" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)
+collision_mask = 2
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
+script = ExtResource("2_cm3nk")
+state = NodePath("TestIdleState")
+
+[node name="TestIdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("left_detector", "right_detector", "player_detector")]
+script = ExtResource("3_k4x2w")
+left_detector = NodePath("../../GroundDetector1")
+right_detector = NodePath("../../GroundDetector2")
+acceleration = 40
+player_detector = NodePath("../../PlayerDetector")
+
+[node name="TestChaseState" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_detector")]
+script = ExtResource("4_wxxvs")
+player_detector = NodePath("../../PlayerDetector")
+
+[node name="GravityComponent" type="Node" parent="."]
+script = ExtResource("5_impnr")
+
+[node name="VelocityClampingComponent" type="Node" parent="."]
+script = ExtResource("6_d7g1r")
+max_speed = Vector2(20, 400)
+
+[node name="MoveComponent" type="Node" parent="."]
+script = ExtResource("7_vm74l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+texture = ExtResource("8_4gcji")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 3)
+shape = SubResource("CircleShape2D_agjlq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 4)
+shape = SubResource("CircleShape2D_xvtja")
+
+[node name="PlayerCollider" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollider"]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_sj2xp")
+
+[connection signal="body_entered" from="PlayerCollider" to="." method="_on_player_touch"]

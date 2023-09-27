@@ -1,20 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://lwywgu52v60w"]
+[gd_scene load_steps=12 format=3 uid="uid://lwywgu52v60w"]
 
 [ext_resource type="Texture2D" uid="uid://dvot18cge2i4x" path="res://assets/images/ceuzinhobonitocomcenario.png" id="1_8dwwu"]
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_m3wp8"]
-[ext_resource type="Texture2D" uid="uid://bg7qwujeuxjjc" path="res://assets/images/racing_game/rcar.png" id="2_5yp6i"]
 [ext_resource type="Script" path="res://scripts/battle_menu.gd" id="3_65ldj"]
 [ext_resource type="Script" path="res://scripts/battle_button.gd" id="4_2han0"]
 [ext_resource type="Theme" uid="uid://n544tnd1xo5o" path="res://assets/themes/fixed_battle_theme.tres" id="5_hd2jm"]
 [ext_resource type="Theme" uid="uid://dqa2gn4bdbdww" path="res://assets/themes/list_theme.tres" id="6_xg06a"]
-[ext_resource type="Script" path="res://scripts/fighter.gd" id="8_eayxb"]
-[ext_resource type="Script" path="res://scripts/fighter_stats.gd" id="9_y5bvl"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skeny"]
-bg_color = Color(0.145098, 0.145098, 0.145098, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65kus"]
-bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_nrho6"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -34,16 +25,6 @@ Panel/styles/panel = SubResource("StyleBoxFlat_pobtd")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ocyla"]
 
-[sub_resource type="Resource" id="Resource_7gh5t"]
-script = ExtResource("9_y5bvl")
-base_max_health = 10.0
-base_max_mana = 10.0
-base_strength = 5.0
-base_defense = 5.0
-base_speed = 5.0
-base_initiative = 5.0
-action_paths = Array[String]([])
-
 [node name="battle" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -59,209 +40,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_8dwwu")
-
-[node name="Allies" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 16.0
-offset_top = -58.0
-offset_right = 144.0
-offset_bottom = 22.0
-grow_vertical = 2
-
-[node name="AlliesBox" type="HBoxContainer" parent="Allies"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Ally" type="Control" parent="Allies/AlliesBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Sprite" type="Sprite2D" parent="Allies/AlliesBox/Ally"]
-position = Vector2(24, 40)
-scale = Vector2(2, 2)
-texture = ExtResource("2_5yp6i")
-centered = false
-
-[node name="TextureProgressBar" type="ProgressBar" parent="Allies/AlliesBox/Ally"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = -20.0
-offset_right = -15.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
-theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
-value = 25.0
-show_percentage = false
-
-[node name="Ally2" type="Control" parent="Allies/AlliesBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Allies/AlliesBox/Ally2"]
-position = Vector2(22, 32)
-scale = Vector2(2, 2)
-texture = ExtResource("2_5yp6i")
-centered = false
-
-[node name="TextureProgressBar" type="ProgressBar" parent="Allies/AlliesBox/Ally2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 14.0
-offset_top = -24.0
-offset_right = -16.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
-theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
-value = 25.0
-show_percentage = false
-
-[node name="Enemies" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -58.0
-offset_right = -16.0
-offset_bottom = 22.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="EnemiesBox" type="HBoxContainer" parent="Enemies"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="enemy" type="Control" parent="Enemies/EnemiesBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/EnemiesBox/enemy"]
-position = Vector2(24, 32)
-scale = Vector2(2, 2)
-texture = ExtResource("2_5yp6i")
-centered = false
-
-[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/EnemiesBox/enemy"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = -24.0
-offset_right = -14.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
-theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
-value = 25.0
-show_percentage = false
-
-[node name="enemy2" type="Control" parent="Enemies/EnemiesBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/EnemiesBox/enemy2"]
-position = Vector2(24, 40)
-scale = Vector2(2, 2)
-texture = ExtResource("2_5yp6i")
-centered = false
-
-[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/EnemiesBox/enemy2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = -20.0
-offset_right = -15.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
-theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
-value = 25.0
-show_percentage = false
-
-[node name="enemy3" type="Control" parent="Enemies/EnemiesBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/EnemiesBox/enemy3"]
-position = Vector2(24, 40)
-scale = Vector2(2, 2)
-texture = ExtResource("2_5yp6i")
-centered = false
-
-[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/EnemiesBox/enemy3"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = -20.0
-offset_right = -15.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
-theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
-value = 25.0
-show_percentage = false
-
-[node name="enemy4" type="Control" parent="Enemies/EnemiesBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/EnemiesBox/enemy4"]
-position = Vector2(24, 40)
-scale = Vector2(2, 2)
-texture = ExtResource("2_5yp6i")
-centered = false
-
-[node name="TextureProgressBar" type="ProgressBar" parent="Enemies/EnemiesBox/enemy4"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = -20.0
-offset_right = -15.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_skeny")
-theme_override_styles/fill = SubResource("StyleBoxFlat_65kus")
-value = 25.0
-show_percentage = false
 
 [node name="Actions" type="NinePatchRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -635,19 +413,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Fighter" type="Node" parent="."]
-script = ExtResource("8_eayxb")
-stats = SubResource("Resource_7gh5t")
-
-[node name="Fighter2" type="Node" parent="."]
-script = ExtResource("8_eayxb")
-stats = SubResource("Resource_7gh5t")
-
-[node name="Fighter3" type="Node" parent="."]
-script = ExtResource("8_eayxb")
-stats = SubResource("Resource_7gh5t")
-
-[node name="Fighter4" type="Node" parent="."]
-script = ExtResource("8_eayxb")
-stats = SubResource("Resource_7gh5t")
