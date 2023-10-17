@@ -44,7 +44,7 @@ func spawn_field():
 		spawn_row(Vector2(
 			0, height_offset * h
 		), width)
-		density -= 100 / height
+		density -= 100. / height
 
 
 func _on_draw() -> void:

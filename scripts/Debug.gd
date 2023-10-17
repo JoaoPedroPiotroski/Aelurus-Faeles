@@ -9,7 +9,7 @@ var loading_debug_lines : Array[String] = []
 var loading_debug_severity : Array[int] = []
 var loading_debug : bool = false
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	if loading_debug:
 		if loading_debug_lines.size() > 0:
 			print("LOADING DEBUG [", Time.get_datetime_string_from_system(), "]")

@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvqaprkljyhw4"]
+
+[ext_resource type="FontVariation" uid="uid://gxxku6cra6wb" path="res://assets/fonts/pixel_oversize.tres" id="1_m8hi2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3vcuf"]
+line_spacing = 1.0
+font = ExtResource("1_m8hi2")
+font_size = 4
+font_color = Color(0.768627, 1, 0.721569, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_214ft"]
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+anti_aliasing = false
+
+[node name="AllyFighterDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 89.0
+offset_top = 41.0
+offset_right = 89.0
+offset_bottom = 41.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = 1.0
+offset_right = 35.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "HP: 20/20"
+label_settings = SubResource("LabelSettings_3vcuf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = 8.0
+offset_right = 35.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "MP: 20/20"
+label_settings = SubResource("LabelSettings_3vcuf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionButtons" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="Button" type="Button" parent="ActionButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.768627, 1, 0.721569, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_m8hi2")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_214ft")
+text = "Claw"
+
+[node name="Button2" type="Button" parent="ActionButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.768627, 1, 0.721569, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_m8hi2")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_214ft")
+text = "Claw"
+
+[node name="Button3" type="Button" parent="ActionButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.768627, 1, 0.721569, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_m8hi2")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_214ft")
+text = "Claw"
+
+[node name="Button4" type="Button" parent="ActionButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.768627, 1, 0.721569, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_m8hi2")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_214ft")
+text = "Claw"

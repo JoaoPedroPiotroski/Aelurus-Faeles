@@ -1,7 +1,5 @@
 class_name Enemy
 extends Entity
-
-var components : Array[Component] = []
 #var enemies_found : Array[Enemy] = []
 #var propagator
 #var propagator_path = "res://scenes/enemy_propagator.tscn"
@@ -13,13 +11,7 @@ func _ready() -> void:
 		if child is Component:
 			components.append(child)
 
-func stop() -> void:
-	for component in components:
-		component.disable()
-
-func restart() -> void:
-	for component in components:
-		component.enable()
+		
 
 #func propagate(starter : Enemy) -> void:
 #	if starter.enemies_found.size() >= 3:

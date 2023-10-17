@@ -17,8 +17,8 @@ func _on_round_started():
 func _on_round_ended():
 	pass
 
-func _on_turn_started(agitator : Fighter):
+func _on_turn_started(_agitator : Fighter):
 	pass
 
-func _on_turn_ended(agitator : Fighter):
+func _on_turn_ended(_agitator : Fighter):
 	pass

@@ -95,20 +95,18 @@ func unload_connections():
 
 func _on_LevelPlayArea_body_entered(_body : Node2D):
 	if _body is Player:
-		print('player entered', self)
+		#print('player entered', self)
 		var old_level : Level = null
 		old_level = Level.current_level
 		Level.current_level = self
 		load_connections()
 		if old_level:
 			old_level.unload_connections()
-	if _body is Entity and not _body is Player:
+	if _body is Entity and not _body is AllyFighter:
 		_body.call_deferred("reparent", self)
 
 func _on_LevelPlayArea_body_exited(_body):
-	if _body is Player:
-		print('player left', self)
-	#unload_connections()
+	pass
 		
 func _exit_tree():
 	Level.loaded_levels.erase(self)
