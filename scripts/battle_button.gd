@@ -25,7 +25,8 @@ func _input(_event: InputEvent) -> void:
 		emit_signal('button_deselect')
 	
 func _on_focus_entered():
-	var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_IN_OUT)
+	var tween = get_tree().create_tween(
+	).bind_node(self).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self, "global_position:y", global_position.y - 5, 0.2)
 	
 func _on_focus_exited():

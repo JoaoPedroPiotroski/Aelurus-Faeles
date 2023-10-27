@@ -29,7 +29,7 @@ func _physics_process(delta):
 	var far_enough := false
 	if last_trailmaker_pos != trailmaker.global_position:
 		if last_tpoint:
-			if last_tpoint.position.distance_to(trailmaker.global_position) > min_point_distance:
+			if last_tpoint.position.distance_to(trailmaker.global_position) > min_point_distance or (not last_tpoint.standable and ground_detector.is_colliding()):
 				far_enough = true
 		else:
 			far_enough = true

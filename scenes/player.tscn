@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://y0wuu3tpy4r5"]
+[gd_scene load_steps=7 format=3 uid="uid://y0wuu3tpy4r5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_eqv3t"]
 [ext_resource type="Texture2D" uid="uid://db0qitjoo1501" path="res://assets/images/player.png" id="2_xni82"]
@@ -6,6 +6,25 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4npc"]
 size = Vector2(11, 6)
+
+[sub_resource type="Animation" id="Animation_h7w6w"]
+resource_name = "new_animation"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_stkip"]
+_data = {
+"new_animation": SubResource("Animation_h7w6w")
+}
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -31,8 +50,14 @@ wait_time = 0.1
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 position_smoothing_enabled = true
 drag_top_margin = 0.6
 editor_draw_drag_margin = true
+
+[node name="AnimationTree" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_stkip")
+}
 
 [connection signal="timeout" from="PartyController/Timer" to="PartyController" method="_on_timer_timeout"]

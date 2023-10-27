@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://d4aq2w7v30kp8"]
+[gd_scene load_steps=47 format=3 uid="uid://d4aq2w7v30kp8"]
 
 [ext_resource type="Texture2D" uid="uid://bvda8i3c7phyr" path="res://assets/images/backgroundstilltest.png" id="1_2ab1v"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_v4asm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://jhklvittjnpx" path="res://assets/images/flamboyantbg.png" id="9_21tmm"]
 [ext_resource type="Texture2D" uid="uid://dxklgffxflqpq" path="res://assets/images/flamboyantleaf.png" id="11_xslr2"]
 [ext_resource type="Shader" path="res://noiseplay.gdshader" id="12_f1cuv"]
+[ext_resource type="Script" path="res://scenes/MainCamera.gd" id="13_uoqtd"]
 [ext_resource type="PackedScene" uid="uid://y0wuu3tpy4r5" path="res://scenes/player.tscn" id="13_v5gcy"]
 [ext_resource type="Script" path="res://scripts/followtrailmaker.gd" id="14_qk1ak"]
 [ext_resource type="Script" path="res://scripts/Party.gd" id="14_uccxt"]
@@ -46,7 +47,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-284.714, -121.395)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(620, 160)
@@ -352,9 +352,22 @@ grow_vertical = 2
 
 [node name="DemoLevel" parent="Levels" instance=ExtResource("22_wgha1")]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+drag_left_margin = 0.5
+drag_top_margin = 0.65
+drag_right_margin = 0.5
+editor_draw_drag_margin = true
+script = ExtResource("13_uoqtd")
+speed_offset_edge = 0.0
+opposite_direction_multiplier = 1.0
+target_ally = Object(CharacterBody2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(20, 1),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"disable_mode":0,"collision_layer":0,"collision_mask":1,"collision_priority":1.0,"input_pickable":false,"motion_mode":0,"up_direction":Vector2(0, -1),"velocity":Vector2(0, 0),"slide_on_ceiling":true,"max_slides":4,"wall_min_slide_angle":0.261799,"floor_stop_on_slope":true,"floor_constant_speed":false,"floor_block_on_wall":true,"floor_max_angle":0.785398,"floor_snap_length":1.0,"platform_on_leave":0,"platform_floor_layers":4294967295,"platform_wall_layers":0,"safe_margin":0.08,"script":ExtResource("16_vawf1"),"path":NodePath(""),"sprite_flip":true,"unsquash_delta":10.0,"do_jump_squash":true,"jump_squash":Vector2(0.7, 1.5),"max_falling_speed":16.0,"jump_height":4.5,"jump_time_to_peak":0.5,"jump_time_to_descent":0.4,"jump_hang_velocity":0.0,"jump_hang_gravity_mul":1.0,"acceleration":2.0,"decceleration":16.0,"max_speed":80.0,"CONTROL_STATE":1,"trailmaker":Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":ExtResource("14_qk1ak"),"trailmaker_np":NodePath(".."),"ground_detector_np":NodePath("../RayCast2D"),"min_point_distance":1.0,"max_trail_size":500.0)
+,"min_standing_distance":14.0,"max_acceptable_distance":150.0,"stats":null,"actions":Array[Resource("res://scripts/battle_action.gd")]([]))
+
+
 [node name="Player" parent="." instance=ExtResource("13_v5gcy")]
-max_falling_speed = 24.0
 jump_time_to_descent = 0.35
+max_falling_speed = 24.0
 jump_hang_velocity = 5.0
 jump_hang_gravity_mul = 0.6
 CONTROL_STATE = 0
@@ -402,6 +415,8 @@ trailmaker_np = NodePath("..")
 ground_detector_np = NodePath("../RayCast2D")
 min_point_distance = 1.0
 max_trail_size = 500.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Party/PartyMember"]
 
 [node name="PartyMember2" type="CharacterBody2D" parent="Party" node_paths=PackedStringArray("trailmaker")]
 modulate = Color(0.129412, 1, 1, 1)

@@ -11,6 +11,7 @@ func _init() -> void:
 	add_to_group("Fighters")
 
 func _ready() -> void:
+	super()
 	for action in actions:
 		action.assign_governor(self)
 
