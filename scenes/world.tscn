@@ -352,22 +352,20 @@ grow_vertical = 2
 
 [node name="DemoLevel" parent="Levels" instance=ExtResource("22_wgha1")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target_ally")]
 position_smoothing_enabled = true
 drag_left_margin = 0.5
 drag_top_margin = 0.65
 drag_right_margin = 0.5
 editor_draw_drag_margin = true
 script = ExtResource("13_uoqtd")
+target_ally = NodePath("../Player")
 speed_offset_edge = 0.0
 opposite_direction_multiplier = 1.0
-target_ally = Object(CharacterBody2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(20, 1),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"disable_mode":0,"collision_layer":0,"collision_mask":1,"collision_priority":1.0,"input_pickable":false,"motion_mode":0,"up_direction":Vector2(0, -1),"velocity":Vector2(0, 0),"slide_on_ceiling":true,"max_slides":4,"wall_min_slide_angle":0.261799,"floor_stop_on_slope":true,"floor_constant_speed":false,"floor_block_on_wall":true,"floor_max_angle":0.785398,"floor_snap_length":1.0,"platform_on_leave":0,"platform_floor_layers":4294967295,"platform_wall_layers":0,"safe_margin":0.08,"script":ExtResource("16_vawf1"),"path":NodePath(""),"sprite_flip":true,"unsquash_delta":10.0,"do_jump_squash":true,"jump_squash":Vector2(0.7, 1.5),"max_falling_speed":16.0,"jump_height":4.5,"jump_time_to_peak":0.5,"jump_time_to_descent":0.4,"jump_hang_velocity":0.0,"jump_hang_gravity_mul":1.0,"acceleration":2.0,"decceleration":16.0,"max_speed":80.0,"CONTROL_STATE":1,"trailmaker":Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":ExtResource("14_qk1ak"),"trailmaker_np":NodePath(".."),"ground_detector_np":NodePath("../RayCast2D"),"min_point_distance":1.0,"max_trail_size":500.0)
-,"min_standing_distance":14.0,"max_acceptable_distance":150.0,"stats":null,"actions":Array[Resource("res://scripts/battle_action.gd")]([]))
-
 
 [node name="Player" parent="." instance=ExtResource("13_v5gcy")]
-jump_time_to_descent = 0.35
 max_falling_speed = 24.0
+jump_time_to_descent = 0.35
 jump_hang_velocity = 5.0
 jump_hang_gravity_mul = 0.6
 CONTROL_STATE = 0
