@@ -364,6 +364,7 @@ speed_offset_edge = 0.0
 opposite_direction_multiplier = 1.0
 
 [node name="Player" parent="." instance=ExtResource("13_v5gcy")]
+path = null
 max_falling_speed = 24.0
 jump_time_to_descent = 0.35
 jump_hang_velocity = 5.0

@@ -5,8 +5,7 @@ const BOOT_PATH : String = "res://scenes/p_apps/boot_screen.tscn"
 const MAIN_SCREEN_PATH : String = "res://scenes/p_apps/main_screen.tscn"
 
 var installed_apps : Array[String] = [
-	"res://scenes/p_apps/racing.tscn",
-	"res://scenes/p_apps/odissey.tscn"
+	"res://scenes/p_apps/racing.tscn"
 ] : get = get_installed_apps # caminhos dos apps instalados
 
 @onready var sub_viewport: SubViewport = $SubViewportContainer/SubViewport

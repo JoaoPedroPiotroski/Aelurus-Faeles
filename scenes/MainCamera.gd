@@ -31,6 +31,7 @@ func _process(delta):
 #	camera.drag_horizontal_enabled = abs(velocity.x) < max_speed / 2.
 
 func _follow_state(delta):
+	
 	if target_ally:
 		
 		drag_vertical_enabled = not target_ally.is_on_floor()

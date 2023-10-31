@@ -3,8 +3,6 @@ extends Fighter
 
 const TILE_SIZE = 8
 
-@export_node_path("GridMap") var path : NodePath
-
 @export_group("Visuals")
 @export var sprite_flip := true
 @export var unsquash_delta := 10.0

@@ -10,3 +10,4 @@ signal app_main_screen_request
 
 func _ready():
 	emit_signal("app_main_screen_request")
+
