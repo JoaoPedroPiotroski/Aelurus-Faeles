@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvqaprkljyhw4"]
+[gd_scene load_steps=7 format=3 uid="uid://bvqaprkljyhw4"]
 
 [ext_resource type="FontVariation" uid="uid://gxxku6cra6wb" path="res://assets/fonts/pixel_oversize.tres" id="1_m8hi2"]
+[ext_resource type="Script" path="res://scripts/AllyFighterDisplay.gd" id="1_xai5b"]
+[ext_resource type="Texture2D" uid="uid://c7uv3n8ai2b5w" path="res://assets/images/swordicon.png" id="2_mcf4o"]
+[ext_resource type="Texture2D" uid="uid://e22d20k2v7lc" path="res://assets/images/bootsicon.png" id="3_i7ibg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3vcuf"]
 line_spacing = 1.0
@@ -28,12 +31,9 @@ anti_aliasing = false
 [node name="AllyFighterDisplay" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 89.0
-offset_top = 41.0
-offset_right = 89.0
-offset_bottom = 41.0
+script = ExtResource("1_xai5b")
 
-[node name="Label" type="Label" parent="."]
+[node name="Health" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -51,7 +51,7 @@ label_settings = SubResource("LabelSettings_3vcuf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="Mana" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -70,6 +70,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ActionButtons" type="GridContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 grow_horizontal = 2
@@ -115,3 +116,26 @@ theme_override_fonts/font = ExtResource("1_m8hi2")
 theme_override_font_sizes/font_size = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_214ft")
 text = "Claw"
+
+[node name="ChoiceButtons" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="AttackButton" type="Button" parent="ChoiceButtons"]
+layout_mode = 2
+icon = ExtResource("2_mcf4o")
+
+[node name="MoveButton" type="Button" parent="ChoiceButtons"]
+layout_mode = 2
+icon = ExtResource("3_i7ibg")

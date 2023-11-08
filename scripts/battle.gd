@@ -1,7 +1,6 @@
 class_name BattleController
 extends Control
 
-var fighters : Array[Fighter] = []
 
 enum TARGETS {
 	ALLY,

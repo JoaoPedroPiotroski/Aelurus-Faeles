@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsggs4jofvrx4"]
+
+[ext_resource type="Script" path="res://scripts/battle_controller.gd" id="1_7en7k"]
+
+[node name="BattleController" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7en7k")

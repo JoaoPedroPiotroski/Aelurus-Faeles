@@ -1,0 +1,136 @@
+[gd_resource type="ShaderMaterial" load_steps=18 format=3 uid="uid://c58njn6i812vd"]
+
+[ext_resource type="Shader" path="res://noiseplay.gdshader" id="1_8gyuh"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_351nn"]
+noise_type = 0
+seed = 5991
+fractal_type = 3
+fractal_octaves = 4
+fractal_lacunarity = 2.222
+fractal_gain = 0.529
+fractal_ping_pong_strength = 4.033
+domain_warp_type = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qe2hp"]
+width = 320
+height = 180
+noise = SubResource("FastNoiseLite_351nn")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nnj5d"]
+noise_type = 3
+seed = -653
+frequency = 0.0286
+fractal_octaves = 4
+fractal_lacunarity = 2.055
+domain_warp_enabled = true
+domain_warp_frequency = 24.614
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cnioc"]
+width = 320
+height = 180
+noise = SubResource("FastNoiseLite_nnj5d")
+
+[sub_resource type="Gradient" id="Gradient_mpw35"]
+offsets = PackedFloat32Array(0.168, 0.24, 0.298, 0.396, 0.458, 0.556, 0.644, 0.746, 0.854, 1)
+colors = PackedColorArray(0.55, 1, 0, 1, 0.2, 1, 0, 1, 0.4675, 0.548625, 0.55, 1, 0.1792, 0.56, 0.249013, 1, 0.76, 0.176573, 0.0456, 1, 0.225, 0.5, 0.3075, 1, 1, 1, 1, 1, 1, 0.91, 0.979, 1, 0.0166667, 1, 0, 1, 0.413135, 0.53, 0.1961, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ia3oh"]
+seed = -1327
+frequency = 0.0174
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nnp46"]
+width = 320
+height = 180
+seamless = true
+color_ramp = SubResource("Gradient_mpw35")
+noise = SubResource("FastNoiseLite_ia3oh")
+
+[sub_resource type="Gradient" id="Gradient_hgi27"]
+offsets = PackedFloat32Array(0.168, 0.24, 0.298, 0.396, 0.458, 0.556, 0.644, 0.746, 0.854, 1)
+colors = PackedColorArray(0.55, 1, 0, 1, 0.2, 1, 0, 1, 0.4675, 0.548625, 0.55, 1, 0.1792, 0.56, 0.249013, 1, 0.76, 0.176573, 0.0456, 1, 0.225, 0.5, 0.3075, 1, 1, 1, 1, 1, 1, 0.91, 0.979, 1, 0.0166667, 1, 0, 1, 0.413135, 0.53, 0.1961, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fnug1"]
+seed = 3231
+frequency = 0.0434
+fractal_octaves = 2
+fractal_lacunarity = 0.799
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 29.579
+domain_warp_frequency = -0.058
+domain_warp_fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6bf3k"]
+width = 320
+height = 180
+invert = true
+seamless = true
+seamless_blend_skirt = 0.148
+color_ramp = SubResource("Gradient_hgi27")
+noise = SubResource("FastNoiseLite_fnug1")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w0xeu"]
+noise_type = 2
+seed = 8385
+fractal_type = 2
+fractal_lacunarity = 1.5
+fractal_weighted_strength = 0.08
+cellular_distance_function = 3
+cellular_jitter = 0.997
+cellular_return_type = 6
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xywwr"]
+width = 320
+height = 180
+seamless = true
+noise = SubResource("FastNoiseLite_w0xeu")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7ctjw"]
+noise_type = 2
+seed = -736
+fractal_type = 2
+fractal_octaves = 1
+fractal_ping_pong_strength = 1.752
+cellular_distance_function = 1
+cellular_jitter = 0.82
+cellular_return_type = 6
+domain_warp_fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tenxk"]
+width = 320
+height = 180
+noise = SubResource("FastNoiseLite_7ctjw")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_afwjh"]
+seed = 4887
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8pkh2"]
+width = 320
+height = 180
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_afwjh")
+
+[resource]
+shader = ExtResource("1_8gyuh")
+shader_parameter/black_shore_color = Color(0, 0.8, 1, 1)
+shader_parameter/black_deep_color = Color(0.929412, 0.929412, 0.929412, 1)
+shader_parameter/black_threshold = 0.096
+shader_parameter/white_threshold = 0.576
+shader_parameter/white_shore_color = Color(0.772549, 0.909804, 0.882353, 1)
+shader_parameter/white_deep_color = Color(1, 0.917647, 0.807843, 1)
+shader_parameter/noise1scrollspeed = 0.02
+shader_parameter/noise2scrollspeed = -0.02
+shader_parameter/uvnoisescrollspeed = 0.05
+shader_parameter/blendnoisescrollspeed = 0.05
+shader_parameter/blend2noisescrollspeed = -0.05
+shader_parameter/blend_time_mul = 0.093
+shader_parameter/color_blend_time_mul = -0.062
+shader_parameter/noisetex1 = SubResource("NoiseTexture2D_xywwr")
+shader_parameter/noisetex2 = SubResource("NoiseTexture2D_tenxk")
+shader_parameter/uvnoisetex = SubResource("NoiseTexture2D_8pkh2")
+shader_parameter/blendnoisetex = SubResource("NoiseTexture2D_cnioc")
+shader_parameter/blend2noisetex = SubResource("NoiseTexture2D_qe2hp")
+shader_parameter/colornoisetex = SubResource("NoiseTexture2D_6bf3k")
+shader_parameter/color2noisetex = SubResource("NoiseTexture2D_nnp46")
