@@ -11,6 +11,7 @@ static var loaded_levels : Array[Level] = []
 static var async_loading_paths : Array[String] = []
 
 var outside_connections : Array[LevelOutsideConnection]
+
 func _ready():
 	if has_node("LevelPlayArea"):
 		var level_play_area : Area2D = get_node("LevelPlayArea")
@@ -94,14 +95,15 @@ func unload_connections():
 			loaded_level.queue_free()
 
 func _on_LevelPlayArea_body_entered(_body : Node2D):
-	if _body is Player:
-		#print('player entered', self)
-		var old_level : Level = null
-		old_level = Level.current_level
-		Level.current_level = self
-		load_connections()
-		if old_level:
-			old_level.unload_connections()
+	if _body is AllyFighter:
+		if _body.CONTROL_STATE == AllyFighter.CONTROL_STATES.PLAYER:
+			#print('player entered', self)
+			var old_level : Level = null
+			old_level = Level.current_level
+			Level.current_level = self
+			load_connections()
+			if old_level:
+				old_level.unload_connections()
 	if _body is Entity and not _body is AllyFighter:
 		_body.call_deferred("reparent", self)
 

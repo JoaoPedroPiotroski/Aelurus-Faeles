@@ -26,7 +26,7 @@ class target_position:
 		trajectory.append(p)
 		
 func _ready():
-	var player : Player = get_parent()
+	var player : AllyFighter = get_parent()
 	var new_target_pos = target_position.new(player.global_position)
 	PartyController.target_positions.push_back(new_target_pos)
 	
@@ -39,12 +39,12 @@ func is_far_away() -> bool:
 	return value
 
 func update_player_position_queue() -> void:
-	var player : Player = get_parent()
+	var player : AllyFighter = get_parent()
 	#print(target_positions)
 	# if player is moving
 	if player.global_position != last_player_position:
 		# if it's a standing position
-		if player.is_on_ground and is_far_away():
+		if is_far_away():
 			var new_target_pos = target_position.new(player.global_position)
 			for target in target_positions:
 				target.owner += 1
