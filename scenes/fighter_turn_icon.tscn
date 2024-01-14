@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnep1xxjkmxu2"]
+
+[ext_resource type="Script" path="res://scripts/FighterTurnIcon.gd" id="1_hjb55"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3nyck"]
+size = Vector2(8, 8)
+
+[node name="FighterTurnIcon" type="TextureRect"]
+texture = SubResource("PlaceholderTexture2D_3nyck")
+stretch_mode = 2
+script = ExtResource("1_hjb55")

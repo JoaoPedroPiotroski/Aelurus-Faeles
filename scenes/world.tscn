@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://d4aq2w7v30kp8"]
+[gd_scene load_steps=35 format=3 uid="uid://d4aq2w7v30kp8"]
 
 [ext_resource type="Texture2D" uid="uid://bvda8i3c7phyr" path="res://assets/images/backgroundstilltest.png" id="1_2ab1v"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_v4asm"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://dp55th70rkj8m" path="res://assets/images/mushroomwich.png" id="16_hq7ua"]
 [ext_resource type="Script" path="res://scripts/AllyFighter.gd" id="16_vawf1"]
 [ext_resource type="Script" path="res://scripts/fighter_stats.gd" id="18_bly1k"]
-[ext_resource type="PackedScene" uid="uid://bsggs4jofvrx4" path="res://scenes/battle_controller.tscn" id="19_mrcuq"]
 [ext_resource type="PackedScene" uid="uid://dc5o1mgd1774q" path="res://scenes/levels/DemoLevel.tscn" id="22_wgha1"]
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_rcswq"]
@@ -85,23 +84,35 @@ gradient = SubResource("Gradient_u3prn")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_32a5x"]
 lifetime_randomness = 0.1
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(25, 1, 1)
-particle_flag_disable_z = true
 direction = Vector3(0.5, 1, 0)
 spread = 30.0
-gravity = Vector3(0, 8, 0)
 initial_velocity_min = 5.0
 initial_velocity_max = 25.0
 angular_velocity_min = 100.0
 angular_velocity_max = 300.0
 orbit_velocity_min = -0.02
 orbit_velocity_max = 0.02
+gravity = Vector3(0, 8, 0)
 linear_accel_max = 0.3
 radial_accel_min = -5.0
 tangential_accel_min = -10.0
 scale_min = 0.5
 color_ramp = SubResource("GradientTexture1D_vodv5")
+
+[sub_resource type="Resource" id="Resource_34ubb"]
+script = ExtResource("18_bly1k")
+base_max_health = 5.0
+base_max_mana = 5.0
+base_strength = 5.0
+base_defense = 5.0
+base_speed = 5.0
+base_initiative = 5.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rw5mc"]
+size = Vector2(8, 8)
 
 [sub_resource type="Resource" id="Resource_kyrgj"]
 script = ExtResource("18_bly1k")
@@ -112,8 +123,14 @@ base_defense = 10.0
 base_speed = 10.0
 base_initiative = 10.0
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_204ar"]
+size = Vector2(8, 8)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84o0i"]
 size = Vector2(8, 4)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_w18xd"]
+size = Vector2(8, 8)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_v4asm")
@@ -211,17 +228,21 @@ texture = ExtResource("7_k4u3o")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target_ally")]
 position_smoothing_enabled = true
-drag_left_margin = 0.5
-drag_top_margin = 0.65
-drag_right_margin = 0.5
 editor_draw_drag_margin = true
 script = ExtResource("13_uoqtd")
+zoom_margin = Vector2(10, 10)
 target_ally = NodePath("../Player")
-speed_offset_edge = 0.0
+follow_offset = Vector2(0, 0)
+speed_offset_edge = 5.0
+offset_delta = 0.5
 opposite_direction_multiplier = 1.0
 
 [node name="Player" parent="." instance=ExtResource("13_v5gcy")]
+position = Vector2(66, 109)
+sine_squash = true
 CONTROL_STATE = 0
+stats = SubResource("Resource_34ubb")
+icon = SubResource("PlaceholderTexture2D_rw5mc")
 
 [node name="RayCast2D" type="RayCast2D" parent="Player"]
 target_position = Vector2(0, 2)
@@ -238,11 +259,13 @@ max_trail_size = 500.0
 script = ExtResource("14_uccxt")
 
 [node name="PartyMember" type="CharacterBody2D" parent="Party" node_paths=PackedStringArray("trailmaker")]
-position = Vector2(20, 1)
+position = Vector2(93, 108)
 collision_layer = 0
 script = ExtResource("16_vawf1")
+sine_squash = true
 trailmaker = NodePath("../../Player/TrailMaker")
 stats = SubResource("Resource_kyrgj")
+icon = SubResource("PlaceholderTexture2D_204ar")
 
 [node name="Sprite2D" type="Sprite2D" parent="Party/PartyMember"]
 position = Vector2(-1, -7)
@@ -269,10 +292,13 @@ max_trail_size = 500.0
 
 [node name="PartyMember2" type="CharacterBody2D" parent="Party" node_paths=PackedStringArray("trailmaker")]
 modulate = Color(0.129412, 1, 1, 1)
-position = Vector2(49, 1)
+position = Vector2(122, 108)
 collision_layer = 0
 script = ExtResource("16_vawf1")
+sine_squash = true
 trailmaker = NodePath("../PartyMember/TrailMaker")
+stats = SubResource("Resource_kyrgj")
+icon = SubResource("PlaceholderTexture2D_w18xd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Party/PartyMember2"]
 position = Vector2(-1, -7)
@@ -292,7 +318,7 @@ hit_from_inside = true
 layer = 4
 follow_viewport_enabled = true
 
-[node name="BattleController" parent="UI" instance=ExtResource("19_mrcuq")]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [connection signal="body_entered" from="Level/Area2D" to="Level/Area2D" method="_on_body_entered"]
 [connection signal="draw" from="Level/grass" to="Level/grass" method="_on_draw"]

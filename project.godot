@@ -12,12 +12,14 @@ config_version=5
 
 config/name="Aelurus Faeles"
 run/main_scene="res://scenes/pspsps.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
+Global="*res://scenes/Global.tscn"
 Debug="*res://scenes/debug.tscn"
+BattleController="*res://scenes/battle_controller.tscn"
 
 [debug]
 

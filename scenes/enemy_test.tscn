@@ -1,85 +1,61 @@
-[gd_scene load_steps=12 format=3 uid="uid://c36xjyspx6jek"]
+[gd_scene load_steps=9 format=3 uid="uid://c36xjyspx6jek"]
 
-[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_u2r5v"]
-[ext_resource type="Script" path="res://scripts/StateMachine.gd" id="2_cm3nk"]
-[ext_resource type="Script" path="res://scripts/TestEnemyIdleState.gd" id="3_k4x2w"]
-[ext_resource type="Script" path="res://scripts/TestChaseState.gd" id="4_wxxvs"]
-[ext_resource type="Script" path="res://scripts/gravitycomponent.gd" id="5_impnr"]
-[ext_resource type="Script" path="res://scripts/VelocityClampingComponent.gd" id="6_d7g1r"]
-[ext_resource type="Script" path="res://scripts/movecomponent.gd" id="7_vm74l"]
-[ext_resource type="Texture2D" uid="uid://db0qitjoo1501" path="res://assets/images/player.png" id="8_4gcji"]
+[ext_resource type="Script" path="res://scripts/EnemyFighter.gd" id="1_3cq3i"]
+[ext_resource type="Texture2D" uid="uid://dbesu2rpy821a" path="res://assets/images/worm.png" id="2_dhvjh"]
+[ext_resource type="Script" path="res://scripts/fighter_stats.gd" id="2_jsw5g"]
+
+[sub_resource type="Resource" id="Resource_6a8jj"]
+script = ExtResource("2_jsw5g")
+base_max_health = 10.0
+base_max_mana = 10.0
+base_strength = 10.0
+base_defense = 10.0
+base_speed = 10.0
+base_initiative = 10.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0mlas"]
+size = Vector2(8, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agjlq"]
-radius = 4.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_xvtja"]
-radius = 3.0
+radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sj2xp"]
-radius = 7.0
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbi4v"]
+radius = 56.0
 
 [node name="EnemyTest2" type="CharacterBody2D"]
 collision_layer = 4
-script = ExtResource("1_u2r5v")
-
-[node name="GroundDetector1" type="RayCast2D" parent="."]
-z_index = 2
-position = Vector2(-4, 4)
-target_position = Vector2(-3, 0)
-
-[node name="GroundDetector2" type="RayCast2D" parent="."]
-z_index = 2
-position = Vector2(7, 4)
-target_position = Vector2(3, 0)
-
-[node name="PlayerDetector" type="RayCast2D" parent="."]
-target_position = Vector2(50, 0)
-collision_mask = 2
-
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
-script = ExtResource("2_cm3nk")
-state = NodePath("TestIdleState")
-
-[node name="TestIdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("left_detector", "right_detector", "player_detector")]
-script = ExtResource("3_k4x2w")
-left_detector = NodePath("../../GroundDetector1")
-right_detector = NodePath("../../GroundDetector2")
-acceleration = 40
-player_detector = NodePath("../../PlayerDetector")
-
-[node name="TestChaseState" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_detector")]
-script = ExtResource("4_wxxvs")
-player_detector = NodePath("../../PlayerDetector")
-
-[node name="GravityComponent" type="Node" parent="."]
-script = ExtResource("5_impnr")
-
-[node name="VelocityClampingComponent" type="Node" parent="."]
-script = ExtResource("6_d7g1r")
-max_speed = Vector2(20, 400)
-
-[node name="MoveComponent" type="Node" parent="."]
-script = ExtResource("7_vm74l")
+script = ExtResource("1_3cq3i")
+player_detector_npath = NodePath("PlayerDetector")
+player_collider_npath = NodePath("PlayerCollider")
+stats = SubResource("Resource_6a8jj")
+icon = SubResource("PlaceholderTexture2D_0mlas")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0, 0, 1)
-texture = ExtResource("8_4gcji")
-hframes = 2
+texture = ExtResource("2_dhvjh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 3)
+visible = false
+position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_agjlq")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 4)
-shape = SubResource("CircleShape2D_xvtja")
 
 [node name="PlayerCollider" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollider"]
-position = Vector2(2, 2)
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_sj2xp")
 
-[connection signal="body_entered" from="PlayerCollider" to="." method="_on_player_touch"]
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 247
+collision_mask = 255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_nbi4v")
+
+[node name="StatsPosition" type="Marker2D" parent="."]
+position = Vector2(0, 15)

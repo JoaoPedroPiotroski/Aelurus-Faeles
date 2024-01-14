@@ -27,7 +27,6 @@ func _ready():
 		loaded_levels.append(self)
 		
 func _process(delta):
-	AnimatedSprite2D
 	for loading_level in async_loading_paths:
 		match(ResourceLoader.load_threaded_get_status(loading_level)):
 			ResourceLoader.THREAD_LOAD_IN_PROGRESS:

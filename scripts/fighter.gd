@@ -3,6 +3,7 @@ extends Entity
 
 @export var stats : FighterStats
 @export var actions : Array[BattleAction]
+@export var icon : Texture2D
 var status_effects : Array[StatusEffect]
 var rounds : int = 0
 var turns : int = 0
@@ -12,6 +13,8 @@ func _init() -> void:
 
 func _ready() -> void:
 	super()
+	if stats:
+		stats.reset()
 	for action in actions:
 		action.assign_governor(self)
 

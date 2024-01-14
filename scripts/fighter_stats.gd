@@ -35,6 +35,8 @@ var mana : float
 	set(value):
 		base_strength = value
 		strength = base_strength + extra_strength
+	get:
+		return base_strength
 @export var base_defense : float :
 	set(value):
 		base_defense = value
@@ -77,3 +79,7 @@ var extra_speed : float = 0:
 	set(value):
 		extra_speed = value
 		speed = base_speed + extra_speed
+
+func reset():
+	health = max_health
+	mana = max_mana

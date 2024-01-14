@@ -29,6 +29,8 @@ expand_margin_bottom = 1.0
 anti_aliasing = false
 
 [node name="AllyFighterDisplay" type="Control"]
+z_index = 5
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_xai5b")

@@ -17,5 +17,6 @@ func setup_navigation():
 	force_update()
 
 func _ready():
+	return
 	if replace_empty_with_navigation:
 		setup_navigation()

@@ -320,9 +320,9 @@ rotation = -1.5708
 texture = ExtResource("3_13fy6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "rotate1"
 libraries = {
 "": SubResource("AnimationLibrary_oxroq")
 }
+autoplay = "rotate1"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

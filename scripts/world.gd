@@ -12,3 +12,4 @@ func _ready():
 		add_child(levels_node)
 		levels_node.name = "Levels"
 	World._levels = get_node("Levels")
+	

@@ -55,7 +55,7 @@ func _on_button_selected(sel_btn : BattleButton):
 		tween.tween_callback(self.emit_signal.bind('accumulate_end'))
 
 func _on_accumulate_end():
-	if is_button_selected:
+	if is_button_selected:		
 		var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		tween.tween_property(self, "global_position", def_position + Vector2(0, -5), 0.2)
 		focus_mode = Button.FOCUS_ALL

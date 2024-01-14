@@ -1,10 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsggs4jofvrx4"]
+[gd_scene load_steps=5 format=3 uid="uid://bsggs4jofvrx4"]
 
 [ext_resource type="Script" path="res://scripts/battle_controller.gd" id="1_7en7k"]
+[ext_resource type="Script" path="res://scripts/FighterTurnIcon.gd" id="2_53nk4"]
+[ext_resource type="PackedScene" uid="uid://cnep1xxjkmxu2" path="res://scenes/fighter_turn_icon.tscn" id="2_pcle2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3nyck"]
+size = Vector2(8, 8)
 
 [node name="BattleController" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_7en7k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TurnOrder" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 8.0
+
+[node name="FighterTurnIcon" parent="CanvasLayer/Control/TurnOrder" instance=ExtResource("2_pcle2")]
+layout_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/Control/TurnOrder"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3nyck")
+stretch_mode = 2
+script = ExtResource("2_53nk4")
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/Control/TurnOrder"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3nyck")
+stretch_mode = 2
+script = ExtResource("2_53nk4")
+
+[node name="TextureRect7" type="TextureRect" parent="CanvasLayer/Control/TurnOrder"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3nyck")
+stretch_mode = 2
+script = ExtResource("2_53nk4")

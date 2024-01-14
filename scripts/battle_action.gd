@@ -3,7 +3,6 @@ extends Resource
 
 @export var title : String
 @export var mana_cost : int = 0
-@export var target_type : BattleController.TARGETS = BattleController.TARGETS.ENEMY
 @export_flags("Damaging", "Healing", "Buffing") var action_type : int = 1
 @export_group("Damaging")
 @export var damage : float = 0
@@ -20,9 +19,6 @@ enum action_types {
 
 func _ready():
 	_on_target_selected(Fighter.new(), Fighter.new())
-
-func _on_action_selected():
-	emit_signal('request_target', target_type)
 	
 func _on_target_selected(_governor : Fighter, target : Fighter):
 	#governor.stats.mana -= mana_cost
